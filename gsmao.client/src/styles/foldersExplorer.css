@@ -1,0 +1,373 @@
+:root {
+  --primario: #061f51;
+  --primarioHover: #194463;
+  --primarioClarito: #bfdcf0ca;
+  --secundario: #e8f0fe;
+  --terciario: #daccbc88;
+  --delete: #c92a2af8;
+  --deleteHover: #942121f8;
+  --btnCrearElemento : #579366e7;
+  --btnCrearElementoHover : #477853e7;
+  --estadoCompletadoParcialmente: #8d9e3fe7;
+  --estadoCompletado: #1f943ce7;
+  --btnRestablecerPassword: #f7c41be7;
+  --btnRestablecerPasswordHover: #c59907e7;
+  --btnDescargarDocumento: #4543cd;
+  --btnDescargarDocumentoHover:#32309b;
+
+  /*Azul clarito*/
+}
+/*============================================================================================================================*/
+
+.tableFolderExplorer {
+  width: 100%;
+}
+.tableFolderExplorer td {
+  padding: 5px ;
+}
+.tableFolderExplorer tr:hover {
+  background-color: rgba(224, 221, 221, 0.699);
+  padding: 5px;
+}
+
+.toolBarCustomFolderExplorer {
+  display: flex;
+  justify-content: space-between;
+}
+.btnExploradorArchivos{
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.btnExploradorArchivos:hover {
+  background-color: rgba(214, 212, 212, 0.774) !important;
+  border: none !important;
+}
+.folder {
+  color: rgb(70, 69, 69);
+  font-weight: 500;
+  cursor: pointer;
+  
+}
+.folder:hover {
+  color: var(--primario);
+  transition: 0.5s;
+  
+}
+
+.buscadorFolderExplorer {
+  margin-bottom: 10px ;
+  padding: 5px; 
+  width: 200px;
+  border-radius:8px ;
+  border: 1px solid gray;
+  outline: none;
+}
+
+
+
+
+/*============================================================================================================================*/
+
+
+
+
+.rendered-file-browser a {
+  color: #425363;
+  text-decoration: none; 
+}
+
+
+.rendered-file-browser a:hover {
+  color: #192026;
+  text-decoration: none; 
+}
+
+.item-actions {
+  display: flex !important;
+  justify-content: end;
+  gap: 10px;
+}
+
+code {
+  max-height: 25vh;
+  white-space: pre;
+  display: block;
+  background: #C6EAFB;
+  padding: 1rem;
+  overflow-y: auto;
+  color: #000; 
+}
+
+div.content-container {
+  max-width: 50rem;
+  margin: 0 auto; }
+
+div.header {
+  padding: 2rem;
+  background: #00ADEF;
+  color: #fff; }
+
+div.header a {
+  color: #fff; }
+
+div.header a.title {
+  font-weight: 400;
+  font-size: 1.6rem; }
+
+div.content {
+  background: #fff;
+  padding: 4rem 1rem; 
+}
+
+a.source-link {
+  display: block;
+  color: #000;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  line-height: 1em;
+  margin: 0.5rem 0; 
+}
+
+div.footer {
+  padding: 3rem 1rem;
+  color: #fff; 
+}
+
+div.rendered-react-keyed-file-browser div.action-bar {
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: flex-start; 
+}
+div.rendered-react-keyed-file-browser div.action-bar input[type="search"] {
+  display: block;
+  flex-grow: 2;
+  min-width: 300px;
+  padding: 0.25rem 0.5rem;
+  font-size: 1rem;
+  line-height: 1em;
+  margin-bottom: 0.5rem;
+  border: 0.1rem solid #ddd; 
+}
+div.rendered-react-keyed-file-browser div.action-bar .item-actions {
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5rem;
+  font-size: 1rem; 
+}
+div.rendered-react-keyed-file-browser div.action-bar ul.item-actions {
+  display: block;
+  flex-grow: 1;
+  min-width: 300px;
+  margin-left: 10px;
+  white-space: nowrap; 
+}
+div.rendered-react-keyed-file-browser div.action-bar ul.item-actions li {
+  display: inline-block;
+  margin: 0; 
+}
+      div.rendered-react-keyed-file-browser div.action-bar ul.item-actions li:not(:last-child) {
+        margin-right: 0.5rem; }
+
+.rendered-react-keyed-file-browser table {
+  width: 100%;
+  margin-bottom: 2rem;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+.rendered-react-keyed-file-browser div.files table th {
+  padding: 0.5rem; 
+  font-weight: bold;
+}
+.rendered-react-keyed-file-browser div.files table tr td {
+  padding: 0.5rem; 
+  cursor: pointer; 
+}
+.rendered-react-keyed-file-browser div.files table tr:hover {
+  background-color: var(--primarioClarito);
+}
+div.rendered-react-keyed-file-browser div.files table th.size, div.rendered-react-keyed-file-browser div.files table th.modified, div.rendered-react-keyed-file-browser div.files table td.size, div.rendered-react-keyed-file-browser div.files table td.modified {
+  text-align: right; 
+}
+div.rendered-react-keyed-file-browser div.files table th.name i, div.rendered-react-keyed-file-browser div.files table td.name i {
+padding-right: 0.5rem; }
+div.rendered-react-keyed-file-browser div.files table thead th {
+border-bottom: 0.1rem solid #ddd; }
+div.rendered-react-keyed-file-browser div.files table tr:not(:last-child) td {
+border-bottom: 0.1rem solid #eee; }
+div.rendered-react-keyed-file-browser div.files table td.name {
+padding-left: 0.8rem; }
+div.rendered-react-keyed-file-browser div.files table td.name form.renaming {
+display: flex;
+align-items: center; }
+div.rendered-react-keyed-file-browser div.files table td.name form.renaming i {
+  flex-grow: 0;
+  flex-shrink: 0; }
+div.rendered-react-keyed-file-browser div.files table td.name form.renaming input[type="text"] {
+  flex: 1; }
+
+div.rendered-react-keyed-file-browser div.files table tr.selected td {
+font-weight: bold; }
+div.rendered-react-keyed-file-browser div.files table tr.selected td input, div.rendered-react-keyed-file-browser div.files table tr.selected td button {
+font-weight: normal; }
+div.rendered-react-keyed-file-browser div.files table tr.selected td.name {
+position: relative; }
+div.rendered-react-keyed-file-browser div.files table tr.selected td.name:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.3rem;
+  height: 100%;
+  background: #1d4567; }
+div.rendered-react-keyed-file-browser div.files table tr.dragover td, div.rendered-react-keyed-file-browser div.files table tr.dragover th {
+background: #eee; }
+
+div.rendered-file-browser div.files li.file.pending, div.rendered-file-browser div.files li.file.dragging, div.rendered-file-browser div.files li.folder.pending, div.rendered-file-browser div.files li.folder.dragging {
+opacity: 0.4; }
+
+div.rendered-file-browser div.files li.file.dragover, div.rendered-file-browser div.files li.folder.dragover {
+background: #eee; }
+
+div.rendered-file-browser div.files li.file.selected > div.item, div.rendered-file-browser div.files li.folder.selected > div.item {
+color: #fff;
+background: #ccc; }
+div.rendered-file-browser div.files li.file.selected > div.item .text-muted, div.rendered-file-browser div.files li.folder.selected > div.item .text-muted {
+color: #e6e6e6; }
+div.rendered-file-browser div.files li.file.selected > div.item a:not(.btn), div.rendered-file-browser div.files li.file.selected > div.item.folder a:not(.btn), div.rendered-file-browser div.files li.file.selected > div.item i, div.rendered-file-browser div.files li.folder.selected > div.item a:not(.btn), div.rendered-file-browser div.files li.folder.selected > div.item.folder a:not(.btn), div.rendered-file-browser div.files li.folder.selected > div.item i {
+color: #fff; }
+
+div.rendered-file-browser div.files ul {
+list-style: none;
+padding: 0;
+display: grid;
+gap: 4px;
+grid-template-columns: repeat(3, 1fr); }
+div.rendered-file-browser div.files ul li.folder {
+grid-column: 1/4; }
+div.rendered-file-browser div.files ul li.folder > div.item {
+display: flex;
+flex-direction: row;
+align-items: center;
+padding-left: 4px;
+border: 1px solid #eee; }
+div.rendered-file-browser div.files ul li.folder > div.item span.name {
+  flex: 1;
+  line-height: folder-size; }
+div.rendered-file-browser div.files ul li.folder > div.item span.thumb {
+  flex-basis: 45px;
+  border: none;
+  text-align: center; }
+  div.rendered-file-browser div.files ul li.folder > div.item span.thumb > i {
+    line-height: 45px;
+    font-size: 18px; }
+div.rendered-file-browser div.files ul li.folder > div.item form.renaming {
+  margin-top: 8px;
+  margin-right: 8px; }
+div.rendered-file-browser div.files ul li.folder > p {
+margin: 8px;
+margin-bottom: 0;
+padding: 0; }
+div.rendered-file-browser div.files ul li.folder.expanded {
+padding-bottom: 8px;
+border-bottom: 1px solid #eee;
+border-left: 4px solid #eee;
+border-right: 1px solid #eee; }
+div.rendered-file-browser div.files ul li.folder.expanded > div.item {
+  padding-left: 0px;
+  margin-right: -1px;
+  margin-left: -1px; }
+div.rendered-file-browser div.files ul li.folder.expanded.selected {
+  border-bottom: 1px solid #ccc;
+  border-left: 4px solid #ccc;
+  border-right: 1px solid #ccc; }
+div.rendered-file-browser div.files ul li.selected.folder > div.item {
+border: 1px solid #bfbfbf; }
+div.rendered-file-browser div.files ul li.selected.folder > div.item span.thumb {
+border: none; }
+div.rendered-file-browser div.files ul li.file {
+margin: 4px;
+padding: 0; }
+div.rendered-file-browser div.files ul li.file > div.item {
+display: flex;
+flex-direction: column;
+padding: 4px;
+margin: 0; }
+div.rendered-file-browser div.files ul li.file > div.item span.thumb {
+  flex-basis: 120px;
+  text-align: center;
+  position: relative;
+  border: 1px solid #eee;
+  margin-bottom: 10px; }
+  div.rendered-file-browser div.files ul li.file > div.item span.thumb > i {
+    font-size: 40px;
+    line-height: 120px; }
+  div.rendered-file-browser div.files ul li.file > div.item span.thumb div.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat; }
+div.rendered-file-browser div.files ul li.selected.file > div.item span.thumb {
+border: 1px solid #bfbfbf; }
+div.rendered-file-browser div.files ul li.selected.file > div.item span.thumb div.image {
+opacity: 0.8; }
+
+div.rendered-file-browser p.loading, div.rendered-file-browser p.empty {
+margin: 16px 0; }
+
+
+
+.sr-only {
+position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+border: 0; }
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+position: static;
+width: auto;
+height: auto;
+margin: 0;
+overflow: visible;
+clip: auto; }
+
+
+.scrollable-list-folder-explorer{
+  max-height: 40vh;
+  overflow-y: auto;
+}
+.scrollable-list-folder-explorer::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+.scrollable-list-folder-explorer::-webkit-scrollbar-thumb {
+  background-color: #c2c2c2; /* Color del pulgar de la barra de desplazamiento */
+  border-radius: 8px; /* Esquinas redondas */
+}
+.scrollable-list-folder-explorer::-webkit-scrollbar-thumb:hover {
+  background-color: #999999; /* Color del pulgar de la barra de desplazamiento */
+}
+
+.scrollable-list-folder-explorer::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Color de fondo de la barra de desplazamiento */
+  border-radius: 8px; /* Esquinas redondas */
+}
+
+.scrollable-list-folder-explorer::-webkit-scrollbar-corner {
+  background-color: transparent; /* Color de fondo de la esquina de la barra de desplazamiento */
+}

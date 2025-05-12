@@ -1,0 +1,16 @@
+:root {
+    /*=========== HITACHI=========*/
+    --identificativoCliente:#c90b16;
+    --identificativoClienteHover:#a50710;
+    --primario: #6985bc;
+    --primarioHover: #4f648d;
+    --iconosPrincipalesMenuLateralHitachi: #000000d9;
+    --iconosSecundariosMenuLateralHitachi: #3d3d3dd9;
+    --colorFondoRightForm: #ffffffc4;
+  }
+
+    /*Inicio de Sesión*/
+    .backgroundImg {
+        background: #fff url('../../public/fondoLoginHitachi.jpg') no-repeat;
+        background-size: cover;
+      }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f3f3f3;
+        }
+        .header {
+            background-color: #072D58; /* Azul oscuro */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .logo {
+            background-color: #f3f3f3;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            vertical-align: middle;
+            border-style: none;
+        }
+        .content {
+            margin: 20px 10%; 
+            font-size: 14px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 10px rgba(0,0,0,0.12);
+            font-family: 'Roboto', sans-serif;
+        }
+        .footer {
+            background-color: #052446; /* Azul más oscuro */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        a {
+            color: #a0a0e3; /* Azul enlace */
+            text-decoration: none;
+        }
+        a:hover {
+            color: #d0d0f0f7; /* Azul enlace al pasar el mouse */
+            text-decoration: double;
+        }
+        @media (max-width: 600px) {
+            .content {
+                margin: 20px 5%; /* Márgenes laterales más pequeños para dispositivos móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <a href="https://hitachimigracion.gsmao.es/">
+            <img src="https://hitachimigracion.gsmao.es/LogoSuitelec_Reduc.ico" alt="Logo de Empresa" style="height: 50px;">
+        </a>
+        
+    </div>
+    <div class="header">
+        <h1>{Subject}</h1>
+    </div>
+
+    <div class="content">
+        <!--<p>Hola, {Addressee}:</p>-->
+        
+        {BodyContent}
+        
+    </div>
+    <div class="footer">
+        <p>Más detalles en: <a href="https://hitachimigracion.gsmao.es/">hitachi.gsmao.es</a></p>
+    </div>
+</body>
+</html>

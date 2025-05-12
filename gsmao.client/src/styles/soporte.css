@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.contenedorGeneralSoporte {
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccionImagenSoporte {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: antiquewhite;*/
+}
+
+.imagenSoporte {
+    margin:10px;
+    width: 50%;
+    /* box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75); */
+    border: none; /* Borde gris claro */
+    /* border-radius: 50%;  */
+    color: var(--primario);
+}
+
+.seccionSoporte {
+    width: 50%;
+    padding: 20px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.tituloFormularioSoporte {
+    font-size: 55px;
+    font-family: Montserrat, Arial, sans-serif;
+    margin-bottom: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.formularioSoporte {
+    padding: 20px;
+    width: 90%;
+}
+
+.formularioSoporte label {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.formularioSoporte input, .formularioSoporte textarea {
+    border-radius: 0 !important;
+    outline: none !important;
+    padding: 5px 0;
+    border-bottom: 2px solid #383838 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    width: 100%;
+    color: #121212;
+    background-color: transparent !important;
+}
+
+#botonEnviarSoporte {
+    font-size: 18px !important;
+    background-color: var(--primario);
+    text-align: center !important;
+    width: 40% !important;
+    color: white;
+    border-radius: 30px !important;
+    padding: 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.formularioSoporte input:focus, 
+.formularioSoporte textarea:focus {
+    outline: none !important; /* Elimina el contorno predeterminado */
+    box-shadow: none !important; /* Elimina cualquier sombra de enfoque */
+    border-bottom: 3px solid var(--primario) !important; /* Opcional: Cambiar el color del borde si quieres un efecto elegante */
+}
+
+/* MEDIA QUERIES */
+/*Queries Soporte*/
+@media only screen and (max-width: 1475px) {
+    #botonEnviarSoporte {
+        width: 45% !important;
+    }
+
+    .imagenSoporte {
+        width: 55%;
+    }
+
+    .formularioSoporte {
+        width: 95%;
+    }
+
+    .tituloFormularioSoporte {
+        font-size: 45px;
+    }
+}
+
+@media only screen and (max-width:1144px) {
+    #botonEnviarSoporte {
+        width: 45% !important;
+    }
+
+    .imagenSoporte {
+        width: 70%;
+    }
+
+    .tituloFormularioSoporte {
+        font-size: 35px;
+    }
+
+    .formularioSoporte {
+        width: 100%;
+    }
+
+        .formularioSoporte label {
+            font-size: 14px;
+        }
+}
+
+@media only screen and (max-width:700px) {
+    .contenedorGeneralSoporte {
+        min-height:75vh;
+    }
+    .tituloFormularioSoporte{
+        font-size:45px;
+        margin-bottom:60px;
+    }
+    .seccionImagenSoporte{
+        width:0%;
+    }
+    .seccionSoporte {
+        padding-top:0px !important;
+        width: 100%;
+        align-items: center;
+        background-image: linear-gradient(rgba(246, 246, 246, 0.7), rgba(246, 246, 246, 0.7)), url("../img/imagenSoporte.png");
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    #botonEnviarSoporte {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .formularioSoporte label {
+        font-size: 17px;
+        margin-top: 10px;
+    }
+        
+}
+
+@media only screen and (max-height: 800px) {
+
+    .imagenSoporte {
+        width: 60%;
+    }
+
+    .tituloFormularioSoporte {
+        font-size: 40px;
+        margin-bottom:10px;
+    }
+
+    .formularioSoporte {
+        width: 100%;
+    }
+
+    .formularioSoporte label {
+        font-size: 14px;
+        margin-top:0px;
+    }
+    .containerBtnSoporte {
+        margin-top:10px !important;
+    }
+    
+}
+
+@media only screen and (max-height: 600px) {
+
+    .tituloFormularioSoporte {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .formularioSoporte {
+        width: 100%;
+    }
+
+    .containerBtnSoporte {
+        margin-top: 10px !important;
+    }
+    .formularioSoporte label {
+        margin-top: 0px;
+    }
+    .formularioSoporte textarea {
+        height: 40px;
+    }
+    .containerBtnSoporte {
+        margin-top: 5px !important;
+    }
+    
+}

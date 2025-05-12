@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+:root {
+
+    /*============ GSMAO ===========*/
+    --colorFondo: #f3f3f3;
+    --primario: #061f51;
+    --primarioHover: #194463; 
+    --identificativoCliente:#061f51;
+    --identificativoClienteHover:#194463;
+    --iconosPrincipalesMenuLateralHitachi: var(--primario);
+    --iconosSecundariosMenuLateralHitachi: var(--primarioHover);
+    --colorFondoRightForm: #e8f0fe;
+  }
+
+  .imgLogoSuitelec{
+    
+      margin-top:5% !important;
+      margin-left: -60px;
+      width:80% !important;
+    
+  }
+
+  /*Inicio de Sesión*/
+  .backgroundImg {
+    background: #fff url('../../public/fondoLoginSuitelec.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .right-form {
+    box-shadow: -10px 0px 15px 5px rgba(0, 0, 0, 0.774);
+  }
+
+  .left-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.left-form h1 {
+    font-size: 120px;
+    color: #ffffff;
+    font-weight: 600;
+    
+    text-shadow: 2px 0 3px rgba(255, 255, 255, 0.8), 
+                 0px 2px 15px rgb(0, 0, 0), 
+                 0 0 30px rgb(0, 0, 0);
+    letter-spacing: 10px;
+    /* font-family: 'Rajdhani', sans-serif; */
+    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Bebas Neue', sans-serif; */
+    /* font-family: 'Exo', sans-serif; */
+    /* font-family: 'Russo One', sans-serif; */
+}
+
+#modalLogin .left-form h1{
+  font-size: 70px;
+}
+
+.formularioLogin{
+  margin-top: -80px;
+}
+
+@media only screen and (max-width: 1190px) {
+  .left-form h1 {
+    font-size: 90px;
+    
+}
+}

@@ -1,0 +1,9 @@
+{
+  "printWidth": 120,
+  "bracketSpacing": false,
+  "bracketSameLine": true,
+  "quoteProps": "consistent",
+  "tabWidth": 4,
+  "useTabs": false,
+  "eol": "CR"
+}

@@ -1,0 +1,18 @@
+SET FOREIGN_KEY_CHECKS=0;
+TRUNCATE TABLE empresas;
+TRUNCATE TABLE plantas;
+TRUNCATE TABLE centrosdecostes;
+TRUNCATE TABLE localizaciones;
+TRUNCATE TABLE mecanismosdefallo;
+TRUNCATE TABLE incidencias;
+TRUNCATE TABLE resoluciones;
+TRUNCATE TABLE activos;
+TRUNCATE TABLE componentes;
+TRUNCATE TABLE activo_componentes;
+TRUNCATE TABLE estadosorden;
+TRUNCATE TABLE tiposorden;
+TRUNCATE TABLE ordenes;
+TRUNCATE TABLE incidenciasordenes;
+TRUNCATE TABLE usuarios_ordenes;
+TRUNCATE TABLE historialcambiosusuariosordenes;
+SET FOREIGN_KEY_CHECKS=1;

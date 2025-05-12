@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+
+.backgroundImg {
+  width: 100%;
+  height: 100%;
+}
+
+
+  .bodyLogin {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bodyLoginModal {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* .left-form {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  } */
+  .left-form {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    float: left;
+}
+
+.wrapperLogoLogin {
+  display:flex;
+  justify-content:center;
+  width:100%;
+  text-align:center
+}
+.wrapperLogoLogin img{
+  margin-top:5%;
+  width:60%;
+}
+.right-form {
+  width: 50%;
+  height: 100%;
+  /*margin: 0;*/
+  background-color: var(--colorFondoRightForm);
+  box-shadow: -1px 0px 3px 0px rgba(0,0,0,0.65);
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+  
+  /* .right-form {
+    width: 50%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: -1px 0px 3px 0px rgba(0, 0, 0, 0.65);
+    background-color: var(--secundario);
+  } */
+  
+  .formularioLogin {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .right-form Form {
+    height: 100%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .right-form h2 {
+    text-align: center;
+    color: var(--iconosPrincipalesMenuLateralHitachi);
+    /* color: var(--primario); */
+    font-size: 38px;
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 1px;
+    margin:0 0 40px 0;
+  }
+  
+  /* .right-form form>input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    padding-left: 15px;
+    border:none ;
+    border-bottom: 1px solid grey;
+    background-color: var(--secundario);
+    outline: none;
+    color: #494848;
+  } */
+  .right-form form>input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    padding-left: 15px;
+    border:none ;
+    border-bottom: 1px solid rgb(63, 63, 63);
+    background-color: transparent;
+    outline: none;
+    color: #494848;
+  }
+
+  /* 🔥 Elimina el fondo de autocompletado en todos los estados */
+.right-form form > input:-webkit-autofill,
+.right-form form > input:-webkit-autofill:hover,
+.right-form form > input:-webkit-autofill:focus,
+.right-form form > input:-webkit-autofill:active {
+    background: none !important;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+    box-shadow: 0 0 0px 1000px transparent inset !important;
+    color: white !important; /* Asegura que el texto es visible */
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* 🔥 Fuerza transparencia en inputs al hacer focus */
+.right-form form > input:focus {
+    background: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border-bottom: 2px solid rgb(63, 63, 63) !important;
+    transition: border-bottom 0.3s ease;
+}
+
+/* 🔥 Evita el color amarillo/azul cuando se selecciona el autocompletado */
+.right-form form > input:-internal-autofill-selected {
+    background-color: transparent !important;
+}
+
+  
+  .right-form label {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px 0;
+  }
+  
+  .checkRecuerdame {
+    width: 100%;
+    /*margin: 20px 0;*/
+  }
+  
+  .right-form .btnLogin {
+    background-color: var(--identificativoCliente) !important;
+    /* background-color: var(--primario); */
+    color: white;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 20px;;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.35);
+
+  }
+  .right-form .btnLogin:hover {
+    background-color: var(--identificativoClienteHover) !important;
+    /* background-color: var(--primarioHover); */
+    color: white;
+    font-size: 20.5px;
+    transition: 0.2s;
+}
+  
+  .footerLogin {
+    text-align: center;
+    /*margin-top:auto;*/
+  }
+
+  .enlaceSolicitarResetPassword{
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: 700;
+    color: black;
+  }
+
+  #modalLogin h2{
+    font-size: 20px;
+  }
+
+  
+@media only screen and (max-width: 1190px) {
+  .right-form form h2 {
+      font-size:24px;
+      margin-top: 70px;
+      margin-bottom: 10px;
+  }
+  .wrapperLogoLogin img{
+    margin-top:3%;
+    width:50%;
+  }
+  .right-form label {
+    font-size: 15px;
+    font-weight: 700;
+    margin:25px 0px 10px  0px;
+  }
+  .right-form form>input {
+    
+    padding: 5px 0;
+    padding-top: 0px;
+    font-size: 18px;
+    padding-left: 15px;
+    
+  }
+  #modalLogin .btnLogin{
+    font-size: 15px !important;
+    padding: 5px;
+  }
+  #modalLogin .footerLogin  p{
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 10px !important;
+}
+}
+
+@media only screen and (max-width: 768px) {
+  .left-form {
+      display: none !important;
+  }
+
+  .right-form {
+      width: 100%;
+      border-left:none;
+  }
+
+  .right-form form {
+      width: 90%;
+      padding: 0 2em;
+      height: 50vh;
+  }
+
+  .right-form form h2 {
+      font-size: 35px !important;
+      margin-bottom: 30px;
+  }
+
+  .right-form form label {
+    font-size: 20px !important;
+    margin-bottom: 30px;
+}
+
+  .right-form .btnLogin {
+    margin-top: 50px !important;
+  }
+
+  .footerLogin p{
+    font-size: 16px !important;
+    padding-bottom: 15px !important;
+  }
+}
+
+@media only screen and (max-height: 550px) {
+  .bodyLayout button {
+      font-size:14px;
+  }
+
+  .bodyLayout table {
+      font-size: 14px;
+  }
+
+  .tituloTopPagina{
+      font-size: 28px;
+      margin: 10px;
+  }
+  .wrapperLogoLogin img {
+      margin-top: 3%;
+      width: 50%;
+      /*height: 100%;*/
+  }
+
+  .right-form form h2 {
+      font-size: 25px;
+      font-family: 'Russo One', sans-serif;
+      margin: 15px 0;
+  }
+
+  .right-form form > input {
+      font-size: 0.8em;
+      padding: 8px 0;
+      padding-left: 5px;
+      border-radius: 8px;
+  }
+
+  .right-form label {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 18px 0;
+  }
+
+  .checkRecuerdame {
+      width: 100%;
+      /*margin: 15px 0;*/
+  }
+
+  .right-form input[type="submit"] {
+      background-color: var(--primario);
+      color: var(--secundario);
+      border: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-family: 'Montserrat', sans-serif;
+  }
+
+  .footerLogin {
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+
+}
+
+@media only screen and (max-width: 800px) and (max-height:1280){
+  .left-form {
+      display: none!important;
+  }
+
+  .right-form {
+      width: 100%;
+      border-left: none;
+  }
+
+  .right-form form {
+      width: 90%;
+      padding: 0 2em;
+  }
+
+  .right-form form h2 {
+      font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 453px) and (max-height:666px) {
+
+  .right-form form h2 {
+      font-size: 25px;
+      font-family: 'Russo One', sans-serif;
+      margin: 15px 0;
+  }
+
+  .right-form form > input {
+      font-size: 0.8em;
+      padding: 6px 0;
+      padding-left: 5px;
+      border-radius: 8px;
+  }
+
+  .right-form label {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 15px 0;
+  }
+
+  .checkRecuerdame {
+      width: 100%;
+      /*margin: 15px 0;*/
+  }
+
+  .right-form input[type="submit"] {
+      background-color: var(--primario);
+      color: var(--secundario);
+      border: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-family: 'Montserrat', sans-serif;
+  }
+
+  .footerLogin {
+      margin-left:20px;
+      margin-right:20px;
+  }
+}
+
+@media only screen and (max-width: 280px) and (max-height:653px) {
+  .right-form form h2 {
+      font-size: 20px;
+  }
+}

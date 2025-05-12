@@ -1,0 +1,1262 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+
+  --colorFondo: #f3f3f3;
+  --primarioClarito: #bfdcf0ca;
+  --secundario: #e8f0fe;
+  --terciario: #daccbc88;
+  /* Color Botones */
+  --delete: #c92a2af8;
+  --deleteHover: #942121f8;
+  --warning: #fcc82b;
+  --warningHover: #e7b92f;
+  --success: #579366e7;
+  --successHover: #477853e7;
+  --info:#4ac0dd;
+  --infoHover:#3b8ea3;
+  --btnCrearElemento : #4d8b5de3;
+  --btnCrearElementoHover : #406b4ae7;
+  --btnCrearElementoDisabled : #72947ae3;
+  --btnRestablecerPassword: #f7c41be7;
+  --btnRestablecerPasswordHover: #c59907e7;
+  /* Colores Estados órdenes */
+  --estadoCerrada: #e94242;
+  --estadoAbierta: #63b96d;
+  --estadoEsperandoMaterial: #578cb9eb;
+  --estadoAnulada: #000000cc;
+  --estadoEnCurso: #fb980bd9;
+  --estadoMaterialGestionado: #7363b9e3;
+  /* Colores Semaforo */
+  --semaforoRojo:#e94242;
+  --semaforoNaranja:#ee9247;
+  --semaforoVerde:#63b96d;
+  /*Colores Badges*/
+  --badgeWarning:  var(--warningHover);
+  --badgeDanger: #cc2e2ef8;
+  --badgeSuccess: var(--success);
+  /*KPIS*/
+  --fondoIndicadores: #f8f9fa;
+  --graficaMantenimientoCorrectivo:#9d71d7fc;
+  --graficaMantenimientoPreventivo:#74c4c5;
+  --graficaMantenimientoMejora:#3ca9fb;
+  --graficaMantenimientoFiabilidadHumana:#407ebf;
+}
+/* No permite la selección de texto */
+/* Para navegadores basados en WebKit */
+/* Para navegadores Firefox */
+ /* Para navegadores Internet Explorer/Edge */
+/* * {
+  user-select: none; 
+  -webkit-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none;
+} */
+
+html {
+  height: 100%;
+  position: relative;
+  background-color:var(--colorFondo);
+}
+
+/*====================================== LAYOUT =====================================*/
+#selectorLanguage{
+  box-shadow: none !important;
+}
+.bodyLayout {
+  min-height: 100vh;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--colorFondo);
+}
+
+.footerPrincipal {
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footerPrincipal p {
+  margin-bottom: 15px !important;
+}
+
+/* MENU TOP*/
+
+.menuTop {
+  z-index: 1000;
+  /* background-color: var(--primario); */
+  background-color: var(--identificativoCliente);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex !important;
+  justify-content: center !important;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.671) !important;
+
+}
+
+.containerMenuTop {
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
+  align-items: center;
+}
+
+.containerBtnMenuLateralHeader{
+
+}
+.containerLogoHeader{
+  flex-grow: 1;
+  text-align: center;
+}
+.containerLangLogOutHeader{
+  text-align: end;
+}
+
+.tituloMenuTop{
+  text-decoration: none;
+  font-family: 'Russo One', sans-serif;
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.btnCerrarSesion {
+  padding: 0px !important;
+  background-color: transparent !important;
+  font-size: 24px !important;
+  box-shadow: none !important;
+}
+
+.btnOffCanvas {
+  padding: 0px 3px 0px 3px !important;
+  background-color: transparent !important;
+  font-size: 25px !important;
+  border: none;
+  box-shadow: none !important; 
+}
+.languageSelect button{
+  color: white !important;
+  border: none !important;
+}
+
+/* MENU LATERAL */
+.contenedorMenuLateral{
+  width: 350px!important;
+}
+
+.headerMenuLateral {
+  background-color: var(--identificativoCliente);
+  /* background-color: var(--primario); */
+  color: white;
+}
+
+.containerTituloBienvenida {
+  display: flex;
+  align-items: center;
+}
+
+.tituloBienvenida {
+  margin: 0;
+  margin-left: 15px;
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.headerMenuLateral button {
+  color: white !important;
+}
+
+
+.navItem{
+  border-radius: 0 !important;
+  border: none !important;
+  
+}
+.navItem button{
+  outline:none !important;
+  border-radius: 0 !important;
+  color: black !important;
+  font-weight: 600 !important; 
+  gap:8px;
+}
+
+.navItem button[aria-expanded="true"] {
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.671) !important;
+  background-color: white;
+}
+
+.navItem button:hover {
+  background-color: var(--terciario) !important;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+.navItemSinSubMenu{
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  padding: 15px 0px 15px 20px;
+  color: black;
+  gap: 6px;
+  width: 100% !important;
+}
+
+.navItemSinSubMenu:hover{
+  background-color: var(--terciario);
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+.subNavItem {
+  border-radius: 0px !important;
+  padding: 15px 15px !important;
+  color: black !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;
+  font-size: 15px;
+  padding-left: 35px !important;
+} 
+
+.subNavItem:hover {
+  background-color: var(--terciario) !important;
+  font-size: 15.5px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+
+.iconoNavLat {
+  color: white;
+  background-color: var(--iconosPrincipalesMenuLateralHitachi);
+  /* background-color: var(--primario); */
+  width: 14px; /* Ancho fijo del contenedor */
+  height: 14px; /* Altura fija del contenedor */
+  padding: 7px;
+  border-radius: 50%; /* Hace que el contenedor sea redondo */
+}
+.iconoNavLatSubmenu {
+  background-color: var(--iconosSecundariosMenuLateralHitachi);
+  /* background-color: var(--primarioHover); */
+}
+
+
+.navMenuLateral .active {
+  background-color: var(--secundario) !important;
+  color: black !important;
+  font-size: 15.5px;
+  font-weight: 600;
+  transition: all 0.7s;
+  /* box-shadow: 0px 0px 5px 0.5px rgba(73, 65, 54, 0.75) !important; */
+}
+
+.collapsed{
+
+  box-shadow: none !important;
+}
+
+
+
+
+
+/* ================================ CONTENIDO ==================================== */
+.form-check-input:checked {
+  background-color: var(--primario) !important;
+  /* background-color: var(--primario) !important; */
+  border-color: var(--primario) !important;
+  /* border-color: var(--primario) !important; */
+}
+
+input:focus, 
+textarea:focus, 
+select:focus
+ {
+    outline: none !important; /* Borde de foco */
+    box-shadow: none !important; /* Opcional: elimina sombras de foco */
+    border-color: #dee2e6 !important;
+}
+
+/*--------------- BOTONES -------------------*/
+.boton{
+  background-color: grey;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding:8px 10px 8px 10px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75) !important;
+}
+
+.btnPrimario{
+    color: var(--primario)!important;
+    font-weight: 600!important;
+
+}
+.btn {
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  border: none !important;
+  border-radius: 10px !important;
+}
+.btn-primary {
+  background-color: var(--primario)!important;
+}
+.btn-primary:hover {
+  background-color: var(--primarioHover)!important;
+}
+
+.btn-danger {
+  background-color: var(--delete)!important;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: var(--deleteHover)!important;
+}
+
+
+.btn-warning {
+  background-color: var(--warning) !important;
+  border: none !important;
+}
+.btn-warning:hover {
+  background-color: var(--warningHover) !important;
+}
+
+div .bg-warning{
+  background-color: var(--estadoEnCurso) !important;
+}
+
+.btn-success {
+  background-color: var(--success) !important;
+  border: none !important;
+}
+.btn-success:hover {
+  background-color: var(--successHover) !important;
+}
+
+div .bg-success{
+  background-color: var(--success) !important;
+}
+
+.btn-info {
+  background-color: var(--info) !important;
+  border: none !important;
+}
+.btn-info:hover {
+  background-color: var(--infoHover) !important;
+}
+
+div .bg-info{
+  background-color: var(--estadoEsperandoMaterial) !important;
+}
+
+.btnPrimario.active{
+  background-color: var(--primario)!important;
+  color: white !important;
+  font-weight: 400!important;
+}
+.btnTabla{
+  color: white!important;
+  border-radius: 11px!important;
+  box-shadow: 0px 0px 0px 1px rgba(124, 124, 124, 0.25) !important;
+  padding: 4px 8px 5px 8px !important;
+  border: none!important;
+}
+.btnTabla:hover{
+  transition: 0.5s;
+}
+
+.btnEditar {
+  background-color: var(--primario)!important;
+  color: white!important;
+  border-radius: 7px!important;
+}
+
+.btnEditar:hover {
+  background-color: var(--primarioHover)!important;
+}
+
+.btnRestablecerPassword{
+  background-color: var(--btnRestablecerPassword) !important;
+}
+.btnRestablecerPassword:hover{
+  background-color: var(--btnRestablecerPasswordHover) !important;
+}
+
+.btnCrearElemento{
+  background-color: var(--btnCrearElemento) !important;
+  font-size: 15px;
+  font-weight: 600;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.btnCrearElemento:hover{
+  background-color: var(--btnCrearElementoHover) !important;
+  transition: 0.8s;
+}
+
+.containerBtnDescargarPlantilla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnDescargarPlantilla{
+  background-color: var(--primario);
+  height: fit-content;
+  margin-top: 12px;
+  width: 90%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btnDescargarPlantilla:hover{
+  background-color: var(--primarioHover);
+  transition: 0.8s;
+}
+
+.btnDescargarDocumentoTabla{
+  background-color: var(--btnDescargarDocumento)!important;
+
+
+}
+.btnDescargarDocumentoTabla:hover{
+  background-color: var(--btnDescargarDocumentoHover)!important;
+}
+
+.modal-content {
+  box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.25);
+}
+/* .modal-body {
+  min-height: 40vh;
+} */
+
+.modal-width-98 {
+  max-width: 98% !important;
+}
+
+.btnHeaderModal {
+  pointer-events: none; /* Deshabilita la funcionalidad del botón */
+  opacity: 1; /* Mantiene la opacidad normal */
+  cursor: default; /* Cambia el cursor a uno normal */
+}
+/* ==================================== BODIES =================================== */
+.bodyContent {
+  width: 90%;
+  margin: 90px auto 0 auto;
+}
+
+#activosComponentes .bodyContent {
+  width: 95%;
+}
+#registroOrdenes .bodyContent {
+  width: 95%;
+}
+#panelGeneral .bodyContent {
+  width: 97%;
+}
+
+#informeOrdenes .bodyContent {
+  width: 95%;
+}
+/* ==================================== CONTENEDORES =================================== */
+.contenedorPlantillaComponente {
+  margin-top: 30px;
+  background-color: white;
+  padding: 20px 30px 15px 30px;
+  border-radius: 25px;
+  box-shadow: 0px 1px 5px 0px #0418308c !important;
+}
+.contenedorComponente {
+  display: flex;
+  flex-direction: column;
+  gap:30px;
+}
+.contenedorRegistroOrdenes{
+  margin-top: 30px;
+}
+
+.contenedorPanelGeneral {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contenedorPlantillaCuadrada{
+  margin-top: 30px;
+  background-color: white;
+  padding: 20px 30px 15px 30px;
+  border-radius: 0px;
+  box-shadow: 0px 1px 5px 0px #0418308c !important;
+}
+
+/* Clases componentes principales */
+.sombra {
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.75) !important;
+}
+
+.icono {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.iconoBotonTabla {
+  font-size: 12px;
+}
+
+.tituloTopPagina {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2px;
+  color: rgb(44, 44, 44);
+  font-size: 35px;
+  font-weight: 400;
+  margin-top: 5px;
+  text-transform: uppercase;
+  word-spacing: 8px;
+  cursor: default;
+}
+
+.customCard {
+  box-shadow: 0px 1px 4px 2px rgba(112,112,112,0.40);
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+}
+
+.tamanoLetraTituloModal{
+  font-size:17px !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.customBadge{
+  padding: 5px 5px 7px 5px!important;
+  font-size: 13px!important;
+}
+
+/* ==================================== SCROLL PERSONALIZADO =================================== */
+
+#folderExplorer .scrollable-list{
+  max-height: 500px !important;
+  min-height: 250px; /* Altura mínima necesaria para que cuando despliegas el dropdown y haya muy pocos elementos no haya problemas */
+  overflow-y: auto;
+}
+
+#folderExplorer .scrollable-list::-webkit-scrollbar {
+  width: 5px; /* Ancho de la barra de desplazamiento */
+}
+#folderExplorer .scrollable-list::-webkit-scrollbar-thumb {
+  background-color: #c2c2c291;
+  border-radius: 2px; /* Esquinas redondas */
+}
+
+.scrollable-list{
+  max-height: 210px;
+  overflow-y: auto;
+}
+.scrollable-list::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+  background-color: #c2c2c2; /* Color del pulgar de la barra de desplazamiento */
+  border-radius: 8px; /* Esquinas redondas */
+}
+.scrollable-list::-webkit-scrollbar-thumb:hover {
+  background-color: #999999; /* Color del pulgar de la barra de desplazamiento */
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Color de fondo de la barra de desplazamiento */
+  border-radius: 8px; /* Esquinas redondas */
+}
+
+.scrollable-list::-webkit-scrollbar-corner {
+  background-color: transparent; /* Color de fondo de la esquina de la barra de desplazamiento */
+}
+
+.custom-content-scroll {
+  max-height: 90vh;
+  overflow-y: auto !important;
+}
+.custom-content-scroll::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+.custom-content-scroll::-webkit-scrollbar-thumb {
+  background-color: #c2c2c2; /* Color del pulgar de la barra de desplazamiento */
+  border-radius: 8px; /* Esquinas redondas */
+}
+.custom-content-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #999999; /* Color del pulgar de la barra de desplazamiento */
+}
+
+.custom-content-scroll::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Color de fondo de la barra de desplazamiento */
+  border-radius: 8px; /* Esquinas redondas */
+}
+
+.custom-content-scroll::-webkit-scrollbar-corner {
+  background-color: transparent; /* Color de fondo de la esquina de la barra de desplazamiento */
+}
+
+/* ==================================== DATATABLE =================================== */
+
+/*Para quitar el color al hacer click en una celda*/
+.ag-cell-focus, .ag-cell {
+  border: none !important;
+}
+
+.ag-theme-quartz {
+  --ag-header-height: 30px;
+  /* --ag-active-color:transparent; */
+  --ag-header-foreground-color: rgb(0, 0, 0);
+  --ag-header-background-color: rgb(255, 255, 255);
+  --ag-borders: none;
+  text-align: center;
+}
+
+.ag-theme-quartz-dark {
+  --ag-header-height: 30px;
+  --ag-active-color:transparent;
+  --ag-borders: none;
+  text-align: center;
+}
+
+.ag-header-cell{
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.ag-cell{
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.ag-cell-wrapper {
+  height:100%;
+}
+/* #tablaActivoInformeOrdenes .ag-body-viewport {
+  height: 4.1vh;
+} */
+
+#tablaActivoInformeOrdenes .ag-root-wrapper {
+  border-radius: 15px;
+}
+
+.ag-theme-quartz .ag-layout-auto-height .ag-center-cols-viewport{
+  min-height: 5vh;
+}
+.ag-theme-quartz-dark .ag-layout-auto-height .ag-center-cols-viewport{
+  min-height: 5vh;
+}
+
+#tablaIncidenciasRegistro .ag-body-viewport {
+  min-height: 5vh;
+}
+#tablaIncidenciasPanelGeneral .ag-body-viewport {
+  min-height: 29vh;
+}
+
+#tablaPanelGeneral .ag-body-viewport{
+  min-height: 27vh;
+}
+ /* .ag-body-viewport {
+  height: 30vh;
+} */
+
+.ag-header-cell-label{
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#tablaActivos .ag-header-cell-label {
+  font-size: 13px; /* Tamaño del texto */
+}
+.ag-paging-panel {
+  border: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+input[class^=ag-] {
+  margin: 0;
+  background-color: #a6bdda41;
+}
+
+.celdaBotonesTabla{
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  align-items: center;
+}
+
+.celdaBotonesTablaCentered{
+  text-align: center;
+  margin-right: 5px;
+}
+
+.celdaBotonesTablaRight{
+  display: flex;
+  justify-content: end;
+}
+
+
+.ag-floating-filter-button {
+  display: none !important;
+}
+
+.shadow-huge {
+  box-shadow: 0px 3px 15px 4px rgba(0,0,0,0.6);
+}
+
+.tableQuickFilter{
+  width: 20%;
+}
+
+
+
+/* ==================================== TAB PERSONALIZADOS =================================== */
+.tabsPersonalizados {
+  border: none !important;
+}
+.tabsPersonalizados button{
+  color: var(--identificativoCliente);
+  /* color: var(--primario); */
+  font-weight:600;
+  font-size: 16px;
+  border: none !important;
+  border-radius: 12px !important;
+  letter-spacing: 1px;
+  text-transform: u;
+}
+.tabsPersonalizados button:hover{
+  color: var(--identificativoClienteHover);
+  /* color: var(--primarioHover); */
+  
+}
+.tabsPersonalizados button[aria-selected="true"]{
+  color: white !important;
+  font-weight:normal;
+  background-color: var(--identificativoCliente) !important;
+  /* background-color: var(--primario) !important; */
+  
+}
+
+#bodyEditarOrden .tab-content{
+  min-height:42vh;
+}
+
+
+
+
+/* ==================================== ACTIVOS COMPONENTES =================================== */
+.contenedorFiltrosNivelesComponentesActivo {
+  margin: 10px 10px 10px 5px;
+  display: flex;
+  gap: 20px;
+  width: 100% !important;
+  justify-content: space-between;
+}
+
+.contenedorNivelesBtnComponentesActivo {
+  display: flex;
+  align-items: centerº;
+}
+
+.contenedorFiltrosNivelesComponentesActivo > * {
+  flex: 1; /* Permite que cada elemento ocupe el mismo espacio */
+}
+.btnEliminarFiltroTablaComponentesActivo {
+  margin: 20px 10px 10px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  max-width: 10%;
+  min-width: 140px;
+}
+.btnEliminarFiltroTablaComponentesActivo button {
+  color: white;
+  background-color: #373737 !important;
+  border: none !important;
+  margin-bottom: 2px;
+}
+.btnEliminarFiltroTablaComponentesActivo button:hover {
+  color: white;
+  background-color: #020202 !important;
+}
+.btnEliminarFiltroTablaComponentesActivo button:disabled {
+  color:white;
+  background-color: #373737 !important;
+}
+
+
+/* ==================================== REGISTRAR ORDEN =================================== */
+.divContainerConfirmarOrden {
+  display: flex;
+  justify-content: center;
+}
+
+.divContainerConfirmarOrden button{
+  width: 30% !important;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+.divAnadirAdjuntosNuevaOrden {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 90%;
+}
+.divIconoBoton{
+  width: 45%;
+}
+
+.divIconoBoton svg{
+  font-size: 60px;
+}
+
+.divLogosAdjuntosNuevaOrden {
+  display: flex;
+  justify-content: space-around;
+  margin:20px;
+}
+
+/* ==================================== FOLDER EXPLORER =================================== */
+.btnMenuOpciones {
+  background-color: transparent !important; 
+  border: none !important;
+  box-shadow: none;
+}
+.btnMenuOpciones:hover {
+  background-color: #d6d6d6 !important;
+}
+.btnMenuOpciones::after {
+  display: none !important; /* Oculta el caret (triángulo) */
+}
+.contenedorMenuOpciones{
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.466) !important;
+  border: none !important;
+}
+
+/* ==================================== PANEL GENERAL =================================== */
+.seccionGraficasPanelGeneral{
+  display:flex;
+  justify-content:space-between;
+}
+
+.divGraficaOrdenesDiarias{
+  display:flex;
+  width:70%;
+  justify-content:center;
+}
+.divGraficasCirculares {
+  display: flex;
+  width: 30%;
+  align-items: center;
+}
+.graficaSemaforo{
+  display:flex;
+  width:50%;
+}
+
+.tooltipGraficaOrdenesPanelGeneral {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px 5px 10px;
+  gap:3px;
+  background-color: rgba(255, 255, 255, 0.349);
+  border: none;
+  
+}
+
+.apexcharts-tooltip{
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.20) !important;
+  background-color: rgba(255, 255, 255, 0.637)!important;
+  border: none!important;
+}
+
+
+/* ==================================== OTROS COMPONENTES COMUNES =================================== */
+.dropdownMultiFiltro {
+  background-color: transparent !important; 
+  border: none !important;
+  box-shadow: none;
+}
+.dropdownMultiFiltro:hover {
+  background-color: #d6d6d6 !important;
+}
+.dropdownMultiFiltro::after {
+  color: #777777 !important; /* Oculta el caret (triángulo) */
+}
+.dropdown-item{
+  padding: 0 5px 0 10px !important;
+  font-size: 14px;
+}
+
+.dropdown-item::before{
+  display: none !important;
+}
+.contenedorMenuDropdownMultiFiltro{
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.466) !important;
+  border: none !important;
+}
+
+.scrollable-list-dropdown{
+  max-height: 360px;
+  overflow-y: auto;
+}
+.scrollable-list-dropdown::-webkit-scrollbar {
+  width: 2px; /* Ancho de la barra de desplazamiento */
+}
+
+.scrollable-list-dropdown::-webkit-scrollbar-thumb {
+  background-color: #c2c2c2; /* Color del pulgar de la barra de desplazamiento */
+  border-radius: 8px; /* Esquinas redondas */
+}
+.scrollable-list-dropdown::-webkit-scrollbar-thumb:hover {
+  background-color: #999999; /* Color del pulgar de la barra de desplazamiento */
+}
+
+.scrollable-list-dropdown::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Color de fondo de la barra de desplazamiento */
+  border-radius: 8px; /* Esquinas redondas */
+}
+
+.scrollable-list-dropdown::-webkit-scrollbar-corner {
+  background-color: transparent; /* Color de fondo de la esquina de la barra de desplazamiento */
+}
+
+
+/* OTROS */
+.custum-file-upload {
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #e8e8e8;
+  background-color: #212121;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 48px 35px -48px #e8e8e8;
+}
+
+.custum-file-upload .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .icon svg {
+  height: 80px;
+  fill: #e8e8e8;
+}
+
+.custum-file-upload .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .text span {
+  font-weight: 400;
+  color: #e8e8e8;
+}
+
+.custum-file-upload input {
+  display: none;
+}
+/*================================================== TOAST ======================================================*/
+.custom-toast {
+    background-color: rgba(14, 135, 62, 0.906) !important;/* Fondo oscuro y un poco transparente */
+   
+}
+
+/* ===================================== KPIS ========================================== */
+.indicadoresSection{
+  display: flex;
+  text-align: center;
+  gap: 20px;
+}
+.plantillaIndicador{
+  width: 20%;
+  background-color: var(--fondoIndicadores);
+  padding: 8px 10px 8px 10px;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: center;
+}
+
+#indicadorTotalCorrectivosConfiabilidad {
+  background-image: linear-gradient(135deg, #65b0f680 10%, #2a4c8a9d 100%);
+}
+#indicadorTotalCorrectivosConfiabilidad .tituloIndicador{
+  color: white;
+  font-weight: 800;
+  font-size: 18px;
+}
+#indicadorTotalCorrectivosConfiabilidad .valorIndicador{
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#indicadorTotal{
+  background-image: linear-gradient(135deg, #65b0f680 10%, #2a4c8a9d 100%);
+}
+
+#indicadorTotal .tituloIndicador{
+  color: white;
+  font-size:20px;
+  font-weight: 800;
+}
+#indicadorTotal .valorIndicador{
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+.contenedorFiltros{
+  width: 15%;
+  display: flex;
+  justify-content: end;
+}
+
+.contenedorFiltros button {
+  background-color: var(--fondoIndicadores);
+  height: 100% !important;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
+.tituloIndicador {
+  text-transform:uppercase;
+  font-weight:700;
+  font-size:15px;
+  font-family: Montserrat, Arial, sans-serif;
+  color: #444;
+  letter-spacing:1px;
+}
+.valorIndicador{
+  font-family: Montserrat, Arial, sans-serif;
+}
+
+
+.containerGraficoKPI{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px !important;
+}
+
+.plantillaGraficaKPI{
+  padding-top: 20px;
+  width: 100%;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+  background-color: var(--fondoIndicadores);
+  border-radius:3px;
+}
+.noFiltrosSeleccionadosEstudioComparativo {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  height: 50vh;
+  align-items: center;
+  gap: 50px;
+}
+
+#indicadorTotalEstudioComparativo {
+  background-image: linear-gradient(135deg, #65b0f680 10%, #2a4c8a9d 100%);
+}
+
+
+/* INFORMES */
+#filtrosInformesOrdenes{
+  width: 50%;
+}
+.selected-row {
+  background-color: #d0f0c0 !important; /* Cambia #d0f0c0 por el color que prefieras */
+}
+
+
+
+/*================================================== OTROS =============================================*/
+.progress{
+  height:15px !important;
+}
+
+.contenedorSpinnerGenericoDashboard {
+  display: flex;
+  justify-content: center;
+  height:40vh;
+  width: 100%;
+  align-items:center;
+}
+.spinnerGenericoDashboard {
+  height: 5rem!important;
+  width: 5rem !important;
+  color: #adb5bd;
+}
+
+#customPopover {
+  border-radius: 100% !important;
+  padding-top: 2px !important;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+  padding-bottom: 3px !important;
+  margin-right: 15px;
+}
+/* =============================================== MEDIA QUERIES ====================================== */
+
+/* TABLET VERTICAL */
+@media only screen and (max-width: 700px) {
+  .tituloTopPagina{
+    font-size: 25px;
+  }
+  .tituloMenuTop{
+    font-size: 25px;
+  }
+
+  .contenedorMenuLateral{
+    width: 300px !important;
+  }
+
+  /* PANEL GENERAL */
+  .contenedorFiltrosNivelesComponentesActivo{
+      flex-direction:column;
+  }
+
+  .contenedorNivelesBtnComponentesActivo{
+    flex-direction:column;
+  }
+  .btnEliminarFiltroTablaComponentesActivo{
+    max-width: 100% !important;
+  }
+
+  .seccionGraficasPanelGeneral{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+  }
+
+  .divGraficaOrdenesDiarias{
+    width:100%;
+  }
+  .divGraficasCirculares {
+    width: 100%;
+  }
+  #contenedorGraficaCircularResponsive{
+    max-width: 100% !important;
+  }
+
+  .tableQuickFilter{
+    width: 45%;
+  }
+
+  /* REGISTRO DE ORDENES */
+#seccionBajaRegistroOrdenes{
+  flex-direction: column;
+}
+
+.customCard{
+  min-width: 100% !important;
+  
+}
+.divAnadirAdjuntosNuevaOrden{
+  flex-direction: column !important;
+  margin-bottom: 30px;
+}
+
+  
+.divContainerConfirmarOrden button{
+  width: 80% !important;
+}
+
+/* FILE EXPLORER */
+.toolBarCustomFolderExplorer{
+  flex-direction: column;
+}
+.toolBarCustomFolderExplorer #botonesToolbarFolderExplorer button{
+  width: 100% ;
+}
+.toolBarCustomFolderExplorer input{
+  width: 100% ;
+}
+
+
+
+/* INFORMES */
+#toolbarInformesOrdenes{
+  flex-direction: column !important;
+  width: 100%;
+  align-items: center !important;
+  gap: 10px;
+}
+#toolbarInformesOrdenes input{
+  width:100%!important;
+}
+
+#contenedorSelectActivoInformeOrdenes{
+padding: 0px !important;
+}
+#selectActivoInformeOrdenes {
+  width: 100% !important;
+}
+
+#filtrosInformesOrdenes{
+  flex-direction: column !important;
+  width: 85% !important;
+  gap: 10px !important;
+}
+
+#btnEliminarFiltrosInformeOrdenes{
+  width: 100% !important;
+}
+#contenedorBtnDescargarInformeOrdenes{
+  width: 85% !important;
+}
+
+#btnDescargarInformeOrdenes{
+  width: 100% !important;
+}
+
+
+}
+
+/*TABLE EN HORIZONTAL*/
+@media only screen and (max-width: 1200px) {
+/* INFORMES */
+#filtrosInformesOrdenes{
+  width: 63.5%;
+}
+
+#contenedorFiltrosFechas input {
+  width: 36vh;
+}
+
+/* Folder Explorer */
+#folderExplorer .scrollable-list{
+  max-height: 250px !important;
+  min-height: 250px; /* Altura mínima necesaria para que cuando despliegas el dropdown y haya muy pocos elementos no haya problemas */
+  overflow-y: auto;
+}
+
+/* TABLAS */
+.tableQuickFilter{
+  width: 35%;
+}
+}
