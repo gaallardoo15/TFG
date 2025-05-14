@@ -93,6 +93,7 @@ html {
   display: flex !important;
   justify-content: center !important;
   box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.671) !important;
+  
 
 }
 
@@ -303,10 +304,10 @@ select:focus
   border-radius: 10px !important;
 }
 .btn-primary {
-  background-color: var(--primario)!important;
+  background-color: var(--btnsGenericos)!important;
 }
 .btn-primary:hover {
-  background-color: var(--primarioHover)!important;
+  background-color: var(--btnsGenericosHover)!important;
 }
 
 .btn-danger {
@@ -372,7 +373,7 @@ div .bg-info{
 }
 
 .btnEditar {
-  background-color: var(--primario)!important;
+  background-color: var(--btnsGenericos)!important;
   color: white!important;
   border-radius: 7px!important;
 }
@@ -727,7 +728,7 @@ input[class^=ag-] {
   border: none !important;
 }
 .tabsPersonalizados button{
-  color: var(--identificativoCliente);
+  color: var(--primario);
   /* color: var(--primario); */
   font-weight:600;
   font-size: 16px;
@@ -737,14 +738,13 @@ input[class^=ag-] {
   text-transform: u;
 }
 .tabsPersonalizados button:hover{
-  color: var(--identificativoClienteHover);
-  /* color: var(--primarioHover); */
+  color: var(--primarioHover);
   
 }
 .tabsPersonalizados button[aria-selected="true"]{
   color: white !important;
   font-weight:normal;
-  background-color: var(--identificativoCliente) !important;
+  background-color: var(--primario) !important;
   /* background-color: var(--primario) !important; */
   
 }

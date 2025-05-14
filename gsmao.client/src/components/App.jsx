@@ -183,16 +183,7 @@ export const NavRoutes = {
                 componente: EstudioComparativoPage,
             },
         },
-    },
-    Soporte: {
-        path: "/soporte",
-        title: t("Soporte"),
-        navName: t("Soporte"),
-        icon: "fa-solid fa-question",
-        elemento: "soporte",
-        componente: SoportePage,
-        subRoutes: {},
-    },
+    }
 };
 
 //funcion que me devuelve todos los objetos de rutas y subrutas a un mismo nivel, eliminando las rutas principales de las subrutas (estas no tienen navegacion)
@@ -370,7 +361,7 @@ export default function App() {
                 />
 
                 {/* PÁGINA SOPORTE */}
-                <Route
+                {/* <Route
                     path={RoutePaths.Soporte.path}
                     element={
                         <DefaultLayout
@@ -380,7 +371,7 @@ export default function App() {
                             claseContenedorPrincipal=""
                         />
                     }
-                />
+                /> */}
                 {/* PAGINA NO ENCONTRDA */}
                 <Route
                     path="*"

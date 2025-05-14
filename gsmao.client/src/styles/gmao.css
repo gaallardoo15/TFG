@@ -6,14 +6,50 @@
 
     /*============ GSMAO ===========*/
     --colorFondo: #f3f3f3;
+    /* --primario: #0d9c65;
+    --primarioHover: #165f43;  */
     --primario: #061f51;
-    --primarioHover: #194463; 
-    --identificativoCliente:#061f51;
-    --identificativoClienteHover:#194463;
+    --primarioHover: #194463;
+    --btnsGenericos: #061f51;
+    --btnsGenericosHover: #194463; 
+    --identificativoCliente:#039b68;
+    --identificativoClienteHover:#0d6648;
     --iconosPrincipalesMenuLateralHitachi: var(--primario);
     --iconosSecundariosMenuLateralHitachi: var(--primarioHover);
     --colorFondoRightForm: #e8f0fe;
   }
+
+
+  /* MENU TOP */
+.dropdown-toggle-custom {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 18px;
+    padding: 2px 20px 2px 20px;
+    font-weight: 700;
+    border: none !important;
+    box-shadow: none;
+}
+
+.dropdown-toggle-custom:hover {
+    color: #f0f0f0;
+    background-color: var(--identificativoClienteHover);
+    
+}
+
+.dropdown-toggle-custom::after {
+    display: none !important;
+
+}
+
+
+
+.btnCerrarSesion {
+    background: none;
+    border: none;
+    color: white;
+}
+
 
   .imgLogoSuitelec{
     
