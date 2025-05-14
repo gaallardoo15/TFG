@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GSMAO.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71ef4028ffdf2bc1f08119574077ca2af1461a60")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee270c3213c8d33f65ffa64587431dd63e12cc71")]
 [assembly: System.Reflection.AssemblyProductAttribute("GSMAO.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GSMAO.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
