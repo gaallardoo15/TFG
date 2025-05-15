@@ -13,7 +13,8 @@
     --btnsGenericos: #061f51;
     --btnsGenericosHover: #194463; 
     --identificativoCliente:#039b68;
-    --identificativoClienteHover:#0d6648;
+    --identificativoClienteHover:#107755be;
+    --identificativoClienteActive:#0d6648;;
     --iconosPrincipalesMenuLateralHitachi: var(--primario);
     --iconosSecundariosMenuLateralHitachi: var(--primarioHover);
     --colorFondoRightForm: #e8f0fe;
@@ -21,20 +22,59 @@
 
 
   /* MENU TOP */
+
+  .menuTop {
+  z-index: 1000;
+  padding: 0;
+  background-color: var(--identificativoCliente);
+  display: flex !important;
+  justify-content: center !important;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.671) !important;
+  
+}
+.containerMenuTop {
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
+  align-items: center;
+}
+.containerLogoHeader{
+  flex-grow: 1;
+  text-align: center;
+}
+  
+.tituloMenuTop{
+  text-decoration: none;
+  font-family: 'Russo One', sans-serif;
+  font-size: 38px;
+  letter-spacing: 4px;
+  color: white;
+}
+
+.containerDropDown{
+  display: flex;
+}
 .dropdown-toggle-custom {
     color: white !important;
     text-decoration: none !important;
     font-size: 18px;
-    padding: 2px 20px 2px 20px;
+    padding: 15px 25px 15px 25px;
     font-weight: 700;
     border: none !important;
+    border-radius: 0 !important;
     box-shadow: none;
+    transition: all 0.5s ease;
+
 }
 
 .dropdown-toggle-custom:hover {
     color: #f0f0f0;
     background-color: var(--identificativoClienteHover);
     
+}
+
+.dropdown-toggle-custom.active {
+    background-color: var(--identificativoClienteActive);
 }
 
 .dropdown-toggle-custom::after {
@@ -45,9 +85,23 @@
 
 
 .btnCerrarSesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
     background: none;
     border: none;
-    color: white;
+    border-radius: 0 !important;
+    color: white !important;
+    box-shadow: none !important;
+    font-size: 18px;
+    padding: 2px 20px 2px 20px;
+    font-weight: 700;
+}
+
+.btnCerrarSesion:hover{
+  color: white !important;
+  background-color: var(--identificativoClienteHover);
 }
 
 
@@ -61,8 +115,7 @@
 
   /*Inicio de Sesión*/
   .backgroundImg {
-    background: #fff url('../../public/fondoLoginSuitelec.jpg') no-repeat;
-    background-size: cover;
+    background: #fff url('../../public/fondoLoginGMAOAncho.png') no-repeat;
   }
 
   .right-form {

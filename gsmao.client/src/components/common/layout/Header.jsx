@@ -50,16 +50,21 @@
 // };
 
 import { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 
 import { CLIENT, CONFIG } from "../../../../config";
 import { redirections, RoutePaths, canSee, NavRoutes } from "@/components/App";
 import { Icono } from "@/components/common/Icono";
 import { AuthService } from "@/services/AuthService";
+import { useTranslation } from "react-i18next";
+
+const authService = new AuthService();
 
 export const Header = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const {t} = useTranslation();
     const [navegacion, setNavegacion] = useState("#");
     const [userRol, setUserRol] = useState(null);
 
@@ -70,65 +75,74 @@ export const Header = () => {
     }, []);
 
     const signOut = () => {
-        AuthService.signOut();
+        authService.signOut();
         navigate(RoutePaths.SignIn.path, { replace: true, state: { signedOut: true } });
     };
 
-    const renderDropdownMenus = () => {
-        return Object.values(NavRoutes).map((route, index) => {
-            if (!canSee(userRol, route.navName)) return null;
+   const renderDropdownMenus = () => {
+    return Object.values(NavRoutes).map((route, index) => {
+        if (!canSee(userRol, route.navName)) return null;
 
-            if (route.subRoutes && Object.keys(route.subRoutes).length > 0) {
-                return (
-                    <Dropdown key={index} className="mx-2">
-                        <Dropdown.Toggle variant="link" className="text-white dropdown-toggle-custom">
-                            
-                            {route.navName}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            {Object.values(route.subRoutes).map((subRoute, subIndex) => {
-                                if (!canSee(userRol, subRoute.navName)) return null;
-                                return (
-                                    <Dropdown.Item key={subIndex} as={NavLink} to={subRoute.path}>
-                                        
-                                        {subRoute.navName}
-                                    </Dropdown.Item>
-                                );
-                            })}
-                        </Dropdown.Menu>
-                    </Dropdown>
-                );
-            } else {
-                return (
-                    <NavLink key={index} to={route.path} className="nav-link text-white mx-2">
-                        
+        const hasSubRoutes = route.subRoutes && Object.keys(route.subRoutes).length > 0;
+
+        // Verifica si alguna subruta coincide con la actual
+        const isActive = hasSubRoutes
+            ? Object.values(route.subRoutes).some(subRoute =>
+                location.pathname.startsWith(subRoute.path)
+            )
+            : location.pathname.startsWith(route.path);
+
+        const toggleClass = `dropdown-toggle-custom ${isActive ? "active" : ""}`;
+
+        if (hasSubRoutes) {
+            return (
+                <Dropdown key={index}>
+                    <Dropdown.Toggle variant="link" className={toggleClass}>
                         {route.navName}
-                    </NavLink>
-                );
-            }
-        });
-    };
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        {Object.values(route.subRoutes).map((subRoute, subIndex) => {
+                            if (!canSee(userRol, subRoute.navName)) return null;
+                            return (
+                                <Dropdown.Item key={subIndex} as={NavLink} to={subRoute.path}>
+                                    {subRoute.navName}
+                                </Dropdown.Item>
+                            );
+                        })}
+                    </Dropdown.Menu>
+                </Dropdown>
+            );
+        } else {
+            return (
+                <NavLink key={index} to={route.path} className={({ isActive }) =>
+                    `nav-link text-white mx-2 ${isActive ? "active" : ""}`
+                }>
+                    {route.navName}
+                </NavLink>
+            );
+        }
+    });
+};
+
 
     return (
         <header>
             <nav className="menuTop navbar navbar-expand-lg fixed-top mb-5">
-                <div className="container-fluid justify-content-between align-items-center px-4">
+                <div className="containerMenuTop">
                     {/* Izquierda: Título */}
                     <NavLink to={navegacion} className="tituloMenuTop">
                         {CONFIG[CLIENT].tituloPrincipal}
                     </NavLink>
 
                     {/* Centro: Menús desplegables */}
-                    <div className="d-flex justify-content-center flex-grow-1">
+                    <div className="containerDropDown">
                         {renderDropdownMenus()}
-                    </div>
-
-                    {/* Derecha: Botón cerrar sesión */}
-                    <div>
                         <button className="btn btnCerrarSesion" onClick={signOut}>
                             <Icono name="fa-solid fa-arrow-right-from-bracket" style={{ color: "white" }} />
+                            {t("Cerrar Sesión")}
                         </button>
                     </div>
+                    
                 </div>
             </nav>
         </header>
