@@ -1,33 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
 
+
+/*Inicio de Sesión*/
 .backgroundImg {
   width: 100%;
   height: 100%;
+  background: #fff url('../../public/fondoLoginGMAORedimensionado.png') no-repeat;
 }
 
 
-  .bodyLogin {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .bodyLoginModal {
-    height: 80vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+.bodyLogin {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bodyLoginModal {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .left-form {
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    float: left;
+.left-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  height: 100%;
+  overflow: hidden;
+  float: left;
+}
+
+.left-form h1 {
+    font-size: 120px;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 2px 0 3px rgba(255, 255, 255, 0.8), 
+                 0px 2px 15px rgb(0, 0, 0), 
+                 0 0 30px rgb(0, 0, 0);
+    letter-spacing: 10px;
+    font-family: 'Orbitron', sans-serif;
+}
+.right-form {
+  width: 35%;
+  height: 100%;
+  background-color: transparent;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .wrapperLogoLogin {
@@ -36,42 +63,22 @@
   width:100%;
   text-align:center
 }
-.wrapperLogoLogin img{
-  margin-top:5%;
-  width:60%;
-}
-.right-form {
-  width: 50%;
-  height: 100%;
-  /*margin: 0;*/
-  background-color: var(--colorFondoRightForm);
-  box-shadow: -1px 0px 3px 0px rgba(0,0,0,0.65);
-  float: right;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-  
-  /* .right-form {
-    width: 50%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: -1px 0px 3px 0px rgba(0, 0, 0, 0.65);
-    background-color: var(--secundario);
-  } */
+
   
   .formularioLogin {
-    width: 100%;
+    height: 65%;
+    background-color: var(--colorFondoRightForm);
+    width: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px 3px rgba(20, 20, 20, 0.685);
   }
   
   .right-form Form {
     height: 100%;
-    width: 55%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,29 +87,19 @@
   
   .right-form h2 {
     text-align: center;
-    color: var(--iconosPrincipalesMenuLateralHitachi);
+    color: white;
     /* color: var(--primario); */
-    font-size: 38px;
-    font-family: 'Russo One', sans-serif;
-    letter-spacing: 1px;
-    margin:0 0 40px 0;
+    font-size: 40px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    text-shadow: 5px 3px 4px rgba(3, 3, 3, 0.767)
   }
-  
-  /* .right-form form>input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 18px;
-    padding-left: 15px;
-    border:none ;
-    border-bottom: 1px solid grey;
-    background-color: var(--secundario);
-    outline: none;
-    color: #494848;
-  } */
   .right-form form>input {
     width: 100%;
     padding: 10px 0;
-    font-size: 18px;
+    font-size: 16px;
     padding-left: 15px;
     border:none ;
     border-bottom: 1px solid rgb(63, 63, 63);
@@ -111,32 +108,27 @@
     color: #494848;
   }
 
-  /* 🔥 Elimina el fondo de autocompletado en todos los estados */
-.right-form form > input:-webkit-autofill,
-.right-form form > input:-webkit-autofill:hover,
-.right-form form > input:-webkit-autofill:focus,
-.right-form form > input:-webkit-autofill:active {
-    background: none !important;
-    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
-    box-shadow: 0 0 0px 1000px transparent inset !important;
-    color: white !important; /* Asegura que el texto es visible */
-    transition: background-color 9999s ease-in-out 0s;
+input:-webkit-autofill {
+  font-size: 18px !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+  box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+  -webkit-text-fill-color: rgb(0, 0, 0) !important;
+  transition: background-color 9999s ease-in-out 0s !important;
 }
 
-/* 🔥 Fuerza transparencia en inputs al hacer focus */
-.right-form form > input:focus {
-    background: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-    border-bottom: 2px solid rgb(63, 63, 63) !important;
-    transition: border-bottom 0.3s ease;
+/* Compatibilidad extra para Firefox */
+input:-moz-autofill {
+  font-size: 18px !important;
+  box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+  -moz-text-fill-color: rgb(0, 0, 0) !important;
 }
 
-/* 🔥 Evita el color amarillo/azul cuando se selecciona el autocompletado */
-.right-form form > input:-internal-autofill-selected {
-    background-color: transparent !important;
+/* Aplicable a todos los inputs dentro de .right-form */
+.right-form input {
+  
+  background-color: transparent !important;
+  color: rgb(0, 0, 0) !important;
 }
-
   
   .right-form label {
     width: 100%;
@@ -145,13 +137,8 @@
     margin: 15px 0;
   }
   
-  .checkRecuerdame {
-    width: 100%;
-    /*margin: 20px 0;*/
-  }
-  
   .right-form .btnLogin {
-    background-color: var(--identificativoCliente) !important;
+    background-color: #08886c !important;
     /* background-color: var(--primario); */
     color: white;
     border: none;

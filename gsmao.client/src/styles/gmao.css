@@ -17,7 +17,7 @@
     --identificativoClienteActive:#0d6648;;
     --iconosPrincipalesMenuLateralHitachi: var(--primario);
     --iconosSecundariosMenuLateralHitachi: var(--primarioHover);
-    --colorFondoRightForm: #e8f0fe;
+    --colorFondoRightForm: #bff0ef6e;
   }
 
 
@@ -81,9 +81,6 @@
     display: none !important;
 
 }
-
-
-
 .btnCerrarSesion {
     display: flex;
     justify-content: center;
@@ -99,58 +96,11 @@
     font-weight: 700;
 }
 
-.btnCerrarSesion:hover{
-  color: white !important;
-  background-color: var(--identificativoClienteHover);
-}
-
-
-  .imgLogoSuitelec{
-    
-      margin-top:5% !important;
-      margin-left: -60px;
-      width:80% !important;
-    
-  }
-
-  /*Inicio de Sesión*/
-  .backgroundImg {
-    background: #fff url('../../public/fondoLoginGMAOAncho.png') no-repeat;
-  }
-
-  .right-form {
-    box-shadow: -10px 0px 15px 5px rgba(0, 0, 0, 0.774);
-  }
-
-  .left-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.left-form h1 {
-    font-size: 120px;
-    color: #ffffff;
-    font-weight: 600;
-    
-    text-shadow: 2px 0 3px rgba(255, 255, 255, 0.8), 
-                 0px 2px 15px rgb(0, 0, 0), 
-                 0 0 30px rgb(0, 0, 0);
-    letter-spacing: 10px;
-    /* font-family: 'Rajdhani', sans-serif; */
-    font-family: 'Orbitron', sans-serif;
-    /* font-family: 'Bebas Neue', sans-serif; */
-    /* font-family: 'Exo', sans-serif; */
-    /* font-family: 'Russo One', sans-serif; */
-}
 
 #modalLogin .left-form h1{
   font-size: 70px;
 }
 
-.formularioLogin{
-  margin-top: -80px;
-}
 
 @media only screen and (max-width: 1190px) {
   .left-form h1 {

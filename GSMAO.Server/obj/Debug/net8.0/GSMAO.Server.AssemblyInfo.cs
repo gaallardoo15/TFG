@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GSMAO.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f591dd520a2149b9f37622d82aaefcf038f6c27")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b796253768522f3b0f9678e702ea9aff35b2fbb8")]
 [assembly: System.Reflection.AssemblyProductAttribute("GSMAO.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GSMAO.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -33,26 +33,11 @@ export const SignInForm = ({initialLoadContent, onLogin, formClassName, modalBod
     return (
         <div className={formClassName || "bodyLogin"} id={modalBody ? "modalLogin" : ""}>
             <div className="backgroundImg">
-                {/* <div style={{position: "absolute", top: 0, right: 0, margin: "1em"}}>
-                    <LanguageSelect variant="outline-dark" />
-                </div> */}
                 <section className="left-form">
-                    {/* <img src="/fondoLogin.png" alt="logoLogin" className="imgFondoLogin" /> */}
-                    {CLIENT == "suitelec" && <h1>GSMAO</h1>}
+                    
+                    {CLIENT == "gmao" && <h1>GMAO</h1>}
                 </section>
                 <section className="right-form">
-                    <div className="wrapperLogoLogin">
-                        {CLIENT == "hitachi" && (
-                            <img src="/logoHitachi.png" alt="logoHitachi" className="imgLogoHitachi" />
-                        )}
-                        {CLIENT == "suitelec" && (
-                            <img
-                                src="/suitelec_energia_comunicacion_control.svg"
-                                alt="logoHitachi"
-                                className="imgLogoSuitelec"
-                            />
-                        )}
-                    </div>
                     <div className="formularioLogin">
                         <form onSubmit={handleSubmit}>
                             <h2>INICIAR SESIÓN</h2>
@@ -90,14 +75,15 @@ export const SignInForm = ({initialLoadContent, onLogin, formClassName, modalBod
                             </Button>
                         </form>
                     </div>
-                    <footer className="footerLogin">
-                        <p>
-                            &copy; {new Date().getFullYear()} - <b>{CONFIG[CLIENT].tituloPrincipal}</b>. Todos los
-                            derecho reservados.
-                            {/* &copy; {new Date().getFullYear()} - <b>GSMAO</b>. Todos los derecho reservados. */}
-                        </p>
-                    </footer>
+                    
                 </section>
+                {/* <footer className="footerLogin">
+                    <p>
+                        &copy; {new Date().getFullYear()} - <b>{CONFIG[CLIENT].tituloPrincipal}</b>. Todos los
+                        derecho reservados.
+                       
+                    </p>
+                </footer> */}
             </div>
         </div>
     );
