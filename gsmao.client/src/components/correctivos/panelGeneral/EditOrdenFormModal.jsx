@@ -341,12 +341,13 @@ export function EditOrdenFormModal({show: showModal, onClose: handleClose, initi
                     </Button>
                     <Button
                         variant="primary"
-                        style={{backgroundColor: "var(--identificativoCliente) !important"}}
+                        id="btnGuardarOrden"
                         type="submit"
                         disabled={isLoading}>
                         {t("Guardar")}
                         <LoadingSpinner isLoading={isLoading} />
                     </Button>
+                    
                 </Modal.Footer>
             </Form>
         </BaseModal>

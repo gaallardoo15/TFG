@@ -232,7 +232,7 @@ export const TablaIncidenciasOrden = ({
                         },
                         {
                             field: "mecanismoDeFallo",
-                            headerName: t("Mecanismo de Fallo"),
+                            headerName: t("Tipo de Incidencia"),
                             valueGetter: (e) => e.data?.incidencia?.mecanismoDeFallo?.descripcionES || "-",
                             flex: 1.5,
                             minWidth: 200,

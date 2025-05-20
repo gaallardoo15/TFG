@@ -840,6 +840,13 @@ input[class^=ag-] {
   border: none!important;
 }
 
+#btnGuardarOrden {
+  background-color: var(--identificativoCliente) !important;
+}
+#btnGuardarOrden:hover {
+  background-color: var(--identificativoClienteHover) !important;
+}
+
 
 /* ==================================== OTROS COMPONENTES COMUNES =================================== */
 .dropdownMultiFiltro {
