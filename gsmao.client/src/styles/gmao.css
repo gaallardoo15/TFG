@@ -8,12 +8,12 @@
     --colorFondo: #f3f3f3;
     /* --primario: #0d9c65;
     --primarioHover: #165f43;  */
-    --primario: #061f51;
-    --primarioHover: #194463;
+    --primario: #08886c;
+    --primarioHover: #085344;
     --btnsGenericos: #061f51;
     --btnsGenericosHover: #194463; 
-    --identificativoCliente:#039b68;
-    --identificativoClienteHover:#107755be;
+    --identificativoCliente:#08886c;
+    --identificativoClienteHover:#085344;
     --identificativoClienteActive:#0d6648;;
     --iconosPrincipalesMenuLateralHitachi: var(--primario);
     --iconosSecundariosMenuLateralHitachi: var(--primarioHover);

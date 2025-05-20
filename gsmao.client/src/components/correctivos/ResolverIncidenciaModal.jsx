@@ -238,7 +238,7 @@ export const ResolverIncidenciaModal = ({
                     <Button variant="secondary" onClick={() => handleClose({shouldRefetch: false})} disabled={false}>
                         {t("Cerrar")}
                     </Button>
-                    <Button variant="primary" type="submit" disabled={!isVisible || isLoading}>
+                    <Button variant="success" type="submit" disabled={!isVisible || isLoading}>
                         {t("Guardar")}
                         <LoadingSpinner isLoading={isLoading} />
                     </Button>

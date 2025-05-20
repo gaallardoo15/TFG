@@ -100,16 +100,7 @@ export const OrdenFormModal = ({
                 value={formData.id || ""}
                 onChange={onChange}
                 disabled
-                md="3"
-            />
-            <TextInput
-                label={t("ID SAP")}
-                placeholder={t("Id sap")}
-                name="idSAP"
-                value={formData.idSAP}
-                onChange={onChange}
-                disabled={isLoading || !operarioIsInOrden}
-                md="3"
+                md="2"
             />
             <SmartSelectInput
                 label={t("Activo")}
@@ -121,7 +112,7 @@ export const OrdenFormModal = ({
                 labelComponent={(a) => `${a.id} - ${a.descripcionES}`}
                 onChange={onChange}
                 disabled
-                md="6"
+                md="5"
             />
             <SelectInputWithConfirmation
                 key={formData.idComponentePadre}
@@ -134,7 +125,7 @@ export const OrdenFormModal = ({
                     label: e.name,
                 }))}
                 disabled={isLoadingOrdenTab || isLoading || !operarioIsInOrden}
-                md="3"
+                md="2"
             />
             <SmartSelectInput
                 label={t("Tipo Orden")}
@@ -148,18 +139,6 @@ export const OrdenFormModal = ({
                 disabled={!isVisible || isLoading}
                 md="3"
             />
-            <SmartSelectInput
-                label={t("Centro de Coste")}
-                required
-                name="idCentroCoste"
-                value={formData.idCentroCoste}
-                fetcher={centrosCostesService.fetchAll}
-                valueKey="id"
-                labelComponent={(a) => `${a.centroCosteSAP} - ${a.descripcionES}`}
-                onChange={onChange}
-                disabled
-                md="6"
-            />
             <TextAreaInput
                 label={t("Comentario")}
                 name="comentarioOrden"
@@ -168,7 +147,7 @@ export const OrdenFormModal = ({
                 md="12"
                 required
                 disabled={formData.idEstadoOrden == 2 || isLoading}
-                rows={3}
+                rows={4}
             />
             <TextAreaInput
                 label={t("Comentario Resolución")}
@@ -176,7 +155,7 @@ export const OrdenFormModal = ({
                 value={formData.comentarioResolucion}
                 onChange={onChange}
                 md="12"
-                rows={3}
+                rows={4}
                 required={estadosCerrados.includes(formData.idEstadoOrden)}
                 disabled={!hayIncidenciasResueltas || formData.idEstadoOrden == 2 || isLoading}
             />

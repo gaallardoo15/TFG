@@ -479,16 +479,6 @@ export const PanelGeneralPage = () => {
                             flex: 3,
                             filter: DatatableSelectFilter,
                         },
-
-                        {
-                            field: "idSAP",
-                            headerName: t("ID SAP"),
-                            valueFormatter: (e) => e.data?.idSAP || "-",
-                            flex: 1,
-                            minWidth: 100,
-                            editable: true,
-                        },
-
                         {
                             field: "usuarios",
                             headerName: t("Usuarios"),
@@ -550,7 +540,7 @@ export const PanelGeneralPage = () => {
                         },
                         {
                             field: "mecanismosDeFallos",
-                            headerName: t("Mecanismo de Fallo"),
+                            headerName: t("Tipo de Incidencia"),
                             valueGetter: (e) => {
                                 let mecanismos = e.data?.mecanismosDeFallos || [];
                                 if (mecanismos === "-") {
