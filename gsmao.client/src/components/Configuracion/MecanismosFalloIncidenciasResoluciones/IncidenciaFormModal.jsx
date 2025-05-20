@@ -93,7 +93,7 @@ export const IncidenciaFormModal = ({show: showModal, onClose: handleClose, init
                             md="12"
                         />
                         <SmartSelectInput
-                            label={t("Mecanismo de Fallo")}
+                            label={t("Tipo de Incidencia")}
                             required
                             name="idMecanismoFallo"
                             value={formData.idMecanismoFallo}

@@ -108,8 +108,8 @@ export const NavRoutes = {
             },
             LocalizacionesCentrosCostes: {
                 path: "/configuracion/localizacionesCentrosCostes",
-                title: t("Gestión Localizaciones y Centros de Coste"),
-                navName: t("Localizaciones y Centros de Coste"),
+                title: t("Gestión Localizaciones"),
+                navName: t("Localizaciones"),
                 icon: "fa-solid fa-house-laptop",
                 elemento: "localizacionesCentrosCostes",
                 componente: CentrosCostesLocalizacionesPage,

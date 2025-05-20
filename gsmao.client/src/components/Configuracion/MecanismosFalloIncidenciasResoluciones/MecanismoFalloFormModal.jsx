@@ -60,7 +60,7 @@ export const MecanismoFalloFormModal = ({show: showModal, onClose: handleClose, 
     return (
         <BaseModal show={showModal} onHide={() => handleClose({shouldRefetch: false})} isLoading={isLoading}>
             <CustomModalHeader
-                title={isEdit ? "Editar Mecanismo de Fallo" : "Crear Mecanismo de Fallo"}
+                title={isEdit ? "Editar Tipo de Incidencia" : "Crear Tipo de Incidencia"}
                 variant={isEdit ? "primary" : "success"}
             />
 

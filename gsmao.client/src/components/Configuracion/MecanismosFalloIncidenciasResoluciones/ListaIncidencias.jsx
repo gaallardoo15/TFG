@@ -127,7 +127,7 @@ export const IncidenciasTable = ({items, isLoading, ActionsComponent, ...rest}) 
         },
         {
             field: "mecanismoFallo",
-            headerName: t("Mecanismo de Fallo"),
+            headerName: t("Tipo de incidencia"),
             valueGetter: (e) => e.data?.mecanismoDeFallo?.descripcionES,
             valueFormatter: (e) => t(e.value),
             flex: 2.5,
@@ -146,6 +146,7 @@ export const IncidenciasTable = ({items, isLoading, ActionsComponent, ...rest}) 
             filter: false, // Deshabilitar el filtro completo para esta columna
             sortable: false,
             hide: !ActionsComponent,
+            tooltipValueGetter: () => null,
         },
     ];
 

@@ -10,7 +10,7 @@ export const MecanismosFalloIncidenciasResolucionesPage = () => {
     return (
         <>
             <CustomTabs defaultActiveKey="tabMecanismosFallo">
-                <ListaMecanismosFallo eventKey="tabMecanismosFallo" title={t("Mecanismos de Fallo")} />
+                <ListaMecanismosFallo eventKey="tabMecanismosFallo" title={t("Tipos de Incidencia")} />
                 <ListaIncidencias eventKey="tabIncidencias" title={t("Incidencias")} />
                 <ListaResoluciones eventKey="tabResoluciones" title={t("Resoluciones")} />
             </CustomTabs>
