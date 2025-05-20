@@ -96,13 +96,13 @@ export const Header = () => {
 
         if (hasSubRoutes) {
             return (
-                <Dropdown key={index}>
+                <Dropdown key={index} className="dropdownPersonalizado">
                     <Dropdown.Toggle variant="link" className={toggleClass}>
                         {route.navName}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         {Object.values(route.subRoutes).map((subRoute, subIndex) => {
-                            if (!canSee(userRol, subRoute.navName)) return null;
+                            if (!canSee(userRol, subRoute.navName) || subRoute.navName=="Empresas") return null;
                             return (
                                 <Dropdown.Item key={subIndex} as={NavLink} to={subRoute.path}>
                                     {subRoute.navName}
