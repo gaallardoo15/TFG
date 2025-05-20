@@ -250,7 +250,7 @@ export const CrearIncidenciaModal = ({show: showModal, onClose: handleClose, idA
                         </div>
                         <div className="d-flex justify-content-between gap-5">
                             <ListCheckBox
-                                textLabel={t("Mecanismos de Fallo")}
+                                textLabel={t("Tipos de Incidencia")}
                                 options={mecanismosFallo}
                                 onChange={(value, checked) => handleMecanismoChange(value, checked)}
                             />

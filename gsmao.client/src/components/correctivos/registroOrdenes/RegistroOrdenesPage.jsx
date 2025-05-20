@@ -305,28 +305,34 @@ export const RegistroOrdenesPage = () => {
                             value={formData.id}
                             onChange={handleInputChange}
                             disabled
-                            md="1"
+                            md="2"
                         />
-                        <TextInput
-                            label={t("ID SAP")}
-                            name="idSAP"
-                            value={formData.idSAP}
+                        <SelectInputWithConfirmation
+                            key={formData.idEstadoOrden}
+                            label={t("Estado")}
+                            name="idEstadoOrden"
+                            value={formData.idEstadoOrden}
+                            onChange={handleInputChange}
+                            options={filteredEstados.map((e) => ({
+                                value: e.id,
+                                label: e.name,
+                            }))}
+                            required={true}
+                            disabled={isLoading}
+                            md="2"
+                        />
+                        <SmartSelectInput
+                            label={t("Tipo")}
+                            required
+                            name="idTipoOrden"
+                            value={formData.idTipoOrden}
+                            fetcher={ordenService.getTiposOrdenes}
+                            valueKey="id"
+                            labelKey="name"
                             onChange={handleInputChange}
                             md="2"
                         />
-                        <div className="col-md-3 mb-3">
-                            <ButtonLabel
-                                titulo={t("Usuarios orden")}
-                                texto={t("Usuarios - Orden")}
-                                icono="fa-solid fa-users"
-                                textLabel={t("Usuarios")}
-                                variant="warning"
-                                onClick={() => handleAction("usuarios")}
-                                disabled={materialIsRequired}
-                                badge={usuariosOrden?.length > 0}
-                                badgeValue={usuariosOrden?.length}
-                            />
-                        </div>
+                        
                         <DateInput
                             label={t("Fecha Apertura")}
                             required
@@ -351,14 +357,19 @@ export const RegistroOrdenesPage = () => {
                             disabled={true}
                             md="3"
                         />
-                        <TextInput
-                            label={t("Centro de Costes")}
-                            name="centroCoste"
-                            value={formData.centroCoste}
-                            onChange={handleInputChange}
-                            disabled={true}
-                            md="3"
-                        />
+                        <div className="col-md-3 mb-3">
+                            <ButtonLabel
+                                titulo={t("Usuarios orden")}
+                                texto={t("Usuarios - Orden")}
+                                icono="fa-solid fa-users"
+                                textLabel={t("Usuarios")}
+                                variant="warning"
+                                onClick={() => handleAction("usuarios")}
+                                disabled={materialIsRequired}
+                                badge={usuariosOrden?.length > 0}
+                                badgeValue={usuariosOrden?.length}
+                            />
+                        </div>
                         <SelectInput
                             label={t("Activo")}
                             name="idActivo"
@@ -382,38 +393,13 @@ export const RegistroOrdenesPage = () => {
                                 disabled={!formData.idActivo}
                             />
                         </Col>
-                        <SelectInputWithConfirmation
-                            key={formData.idEstadoOrden}
-                            label={t("Estado")}
-                            name="idEstadoOrden"
-                            value={formData.idEstadoOrden}
-                            onChange={handleInputChange}
-                            options={filteredEstados.map((e) => ({
-                                value: e.id,
-                                label: e.name,
-                            }))}
-                            required={true}
-                            disabled={isLoading}
-                            md="3"
-                        />
-                        <SmartSelectInput
-                            label={t("Tipo")}
-                            required
-                            name="idTipoOrden"
-                            value={formData.idTipoOrden}
-                            fetcher={ordenService.getTiposOrdenes}
-                            valueKey="id"
-                            labelKey="name"
-                            onChange={handleInputChange}
-                            md="3"
-                        />
+                        
                         <TextAreaInput
                             label={t("Comentario")}
                             name="comentarioOrden"
                             value={formData.comentarioOrden}
                             onChange={handleInputChange}
-                            md="6"
-                            required
+                            md="12"
                             rows={1}
                         />
                     </Row>
