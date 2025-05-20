@@ -49,7 +49,7 @@ export const ListaMecanismosFallo = () => {
                 <BtnTabla
                     key="edit"
                     icono="fa-solid fa-pen"
-                    title={t("Editar mecanismo fallo")}
+                    title={t("Editar tipo de incidencia")}
                     onClick={() => handleAction("form", props.value)}
                     disabled={isRefetching}
                 />
@@ -58,7 +58,7 @@ export const ListaMecanismosFallo = () => {
                 <BtnTabla
                     key="delete"
                     icono="fa-solid fa-trash"
-                    title={t("Eliminar mecanismo fallo")}
+                    title={t("Eliminar tipo de incidencia")}
                     variant="danger"
                     onClick={() => handleAction("delete", props.value)}
                     disabled={isRefetching}
@@ -73,7 +73,7 @@ export const ListaMecanismosFallo = () => {
             <div>
                 <Row>
                     <Col>
-                        <BtnCrearElemento elemento={t("Mecanismo de Fallo")} onClick={() => handleAction("form")} />
+                        <BtnCrearElemento elemento={t("Tipo de Incidencia")} onClick={() => handleAction("form")} />
                     </Col>
                     <Col md={4} className="d-flex flex-column justify-content-center align-items-center">
                         {isRefetching && <SimpleLoadingMessage message={t("Recargando")} />}
@@ -99,7 +99,7 @@ export const ListaMecanismosFallo = () => {
                                         action={() => mecanismosFallosService.delete(modalState.target.id)}
                                         stringAction={t("eliminar")}
                                         description={modalState.target.descripcionES}
-                                        modelName={t("Mecanismo de fallo")}
+                                        modelName={t("tipo de incidencia")}
                                         variant="danger"
                                     />
                                 );
@@ -120,7 +120,7 @@ export const MecanismosFalloTable = ({items, isLoading, ActionsComponent, ...res
     const columns = [
         {
             field: "descripcionES",
-            headerName: t("Mecanismo de Fallo"),
+            headerName: t("Tipo de Incidencia"),
             flex: 8,
             minWidth: 250,
         },
@@ -136,6 +136,7 @@ export const MecanismosFalloTable = ({items, isLoading, ActionsComponent, ...res
             filter: false, // Deshabilitar el filtro completo para esta columna
             sortable: false,
             hide: !ActionsComponent,
+            tooltipValueGetter: () => null,
         },
     ];
 

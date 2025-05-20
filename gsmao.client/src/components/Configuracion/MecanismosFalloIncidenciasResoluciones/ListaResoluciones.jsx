@@ -136,6 +136,7 @@ export const ResolucionesTable = ({items, isLoading, ActionsComponent, ...rest})
             filter: false, // Deshabilitar el filtro completo para esta columna
             sortable: false,
             hide: !ActionsComponent,
+            tooltipValueGetter: () => null,
         },
     ];
 
