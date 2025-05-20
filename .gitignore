@@ -388,3 +388,5 @@ DatabaseRelationalDiagram/Demo/*.dmd
 
 # Ignorar el swagger.json
 tests/*/swagger.json
+/GSMAO.Server/obj/Debug/net8.0/GSMAO.Server.AssemblyInfo.cs
+/GSMAO.Server/obj/Debug/net8.0/GSMAO.Server.AssemblyInfoInputs.cache
