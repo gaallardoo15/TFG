@@ -101,7 +101,7 @@ export const ComponenteFormModal = ({show: showModal, onClose: handleClose, init
                 <Modal.Body>
                     <Row className="">
                         <TextInput
-                            label={t("KKS Componente")}
+                            label={t("Denominación")}
                             placeholder={t("denominación")}
                             // required
                             name="denominacion"

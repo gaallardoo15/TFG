@@ -22,7 +22,7 @@ export const ActivoFormModal = ({show: showModal, onClose: handleClose, initialD
         descripcionEN: "",
         activoSAP: "",
         idLocalizacion: null,
-        idCentroCoste: null,
+        idCentroCoste: 1,
         actividad: "",
         idCriticidad: 5,
         redundancia: 0,
@@ -44,7 +44,7 @@ export const ActivoFormModal = ({show: showModal, onClose: handleClose, initialD
                 ? {
                       ...init,
                       idLocalizacion: init.localizacion?.id,
-                      idCentroCoste: init.centroCoste?.id,
+                      idCentroCoste: defaultData.idCentroCoste,
                       idCriticidad: init.criticidad?.id,
                   }
                 : {};
@@ -98,7 +98,14 @@ export const ActivoFormModal = ({show: showModal, onClose: handleClose, initialD
 
         const actionFunction = isEdit ? activosService.update : activosService.create;
 
-        actionFunction(formData).then((response) => {
+        let formDataToSend = formData;
+        if(formData.activoSAP==""){
+            formDataToSend = {
+                ...formDataToSend,
+                activoSAP: formData.id
+            }
+        }
+        actionFunction(formDataToSend).then((response) => {
             if (!response.is_error) {
                 handleClose({shouldRefetch: true});
             } else {
@@ -147,63 +154,7 @@ export const ActivoFormModal = ({show: showModal, onClose: handleClose, initialD
                             value={formData.descripcionEN}
                             onChange={handleInputChange}
                             disabled={isLoading}
-                            md="12"
-                        />
-                        <TextInput
-                            label={t("Activo SAP")}
-                            placeholder={t("ID SAP del Activo")}
-                            required
-                            name="activoSAP"
-                            value={formData.activoSAP}
-                            onChange={handleInputChange}
-                            disabled={isLoading}
-                            md="4"
-                        />
-                        <NumberInput
-                            label={t("Redundancia")}
-                            placeholder={t("redundancia")}
-                            name="redundancia"
-                            value={formData.redundancia || 0}
-                            onChange={handleInputChange}
-                            disabled={isLoading}
-                            md="4"
-                        />
-                        <NumberInput
-                            label={t("HSE")}
-                            placeholder={t("HSE")}
-                            name="hse"
-                            value={formData.hse || 0}
-                            onChange={handleInputChange}
-                            disabled={isLoading}
-                            md="4"
-                        />
-                        <NumberInput
-                            label={t("Usabilidad")}
-                            placeholder={t("Usabilidad")}
-                            name="usabilidad"
-                            value={formData.usabilidad || 0}
-                            onChange={handleInputChange}
-                            disabled={isLoading}
-                            md="4"
-                        />
-                        <NumberInput
-                            label={t("Coste")}
-                            placeholder={t("coste")}
-                            name="coste"
-                            value={formData.coste || 0}
-                            onChange={handleInputChange}
-                            disabled={isLoading}
-                            md="4"
-                        />
-                        <TextInput
-                            label={t("Valor Criticidad")}
-                            placeholder={t("valor criticidad activo")}
-                            required
-                            name="valorCriticidad"
-                            value={formData.valorCriticidad}
-                            onChange={handleInputChange}
-                            disabled={isLoading}
-                            md="4"
+                            md="6"
                         />
                         <SmartSelectInput
                             label={t("Localizacion")}
@@ -215,20 +166,19 @@ export const ActivoFormModal = ({show: showModal, onClose: handleClose, initialD
                             labelComponent={(l) => `${l.localizacionSAP} -- ${l.descripcionES}`}
                             onChange={handleInputChange}
                             disabled={isLoading}
-                            md="4"
+                            md="6"
                         />
-                        <SmartSelectInput
-                            label={t("Centro Coste")}
+                        <TextInput
+                            label={t("Valor Criticidad")}
+                            placeholder={t("valor criticidad activo")}
                             required
-                            name="idCentroCoste"
-                            value={formData.idCentroCoste}
-                            fetcher={centrosCostesService.fetchAll}
-                            valueKey="id"
-                            labelComponent={(c) => `${c.centroCosteSAP} -- ${c.descripcionES}`}
+                            name="valorCriticidad"
+                            value={formData.valorCriticidad}
                             onChange={handleInputChange}
                             disabled={isLoading}
-                            md="4"
+                            md="6"
                         />
+                        
                         <SmartSelectInput
                             label={t("Criticidad")}
                             required
@@ -238,8 +188,8 @@ export const ActivoFormModal = ({show: showModal, onClose: handleClose, initialD
                             valueKey="id"
                             labelComponent={(c) => `${c.siglas} - ${c.descripcion}`}
                             onChange={handleInputChange}
-                            disabled={isLoading}
-                            md="4"
+                            disabled
+                            md="6"
                         />
                         <MostrarErrores errors={errors} />
                     </Row>

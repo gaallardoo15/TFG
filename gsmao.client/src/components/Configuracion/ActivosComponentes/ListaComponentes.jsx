@@ -267,7 +267,7 @@ export const ComponentesTable = ({items, isLoading, ActionsComponent, textPinned
         },
         {
             field: "denominacion",
-            headerName: t("KKS"),
+            headerName: t("Denominación"),
             flex: 5,
             floatingFilter: false, // Deshabilitar el filtro flotante
             filter: true, // Deshabilitar el filtro completo para esta columna
