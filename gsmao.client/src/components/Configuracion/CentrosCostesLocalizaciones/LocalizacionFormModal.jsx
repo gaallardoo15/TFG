@@ -31,7 +31,7 @@ export const LocalizacionFormModal = ({show: showModal, onClose: handleClose, in
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        let init2 = Object.keys(init).length !== 0 ? {...init, idPlanta: init.planta?.id} : {};
+        let init2 = Object.keys(init).length !== 0 ? {...init, idPlanta: init.planta?.id, descripcionEN: init.descripcionEN ||""} : {};
 
         setFormData({...defaultData, ...init2});
         setErrors({});
@@ -55,7 +55,15 @@ export const LocalizacionFormModal = ({show: showModal, onClose: handleClose, in
         setErrors({});
         setIsLoading(true);
 
-        localizacionesService.save(formData).then((response) => {
+        let formDataToSend = formData;
+        if(formData.localizacionSAP==""){
+            formDataToSend = {
+                ...formDataToSend,
+                localizacionSAP: formData.descripcionES
+            }
+        }
+
+        localizacionesService.save(formDataToSend).then((response) => {
             if (!response.is_error) {
                 handleClose({shouldRefetch: true});
             } else {
@@ -102,23 +110,13 @@ export const LocalizacionFormModal = ({show: showModal, onClose: handleClose, in
                             md="12"
                         />
                         <TextInput
-                            label={t("Localización SAP")}
-                            placeholder={t("Ingresa el id SAP de la localicación")}
-                            required
-                            name="localizacionSAP"
-                            value={formData.localizacionSAP}
-                            onChange={handleInputChange}
-                            disabled={isLoading}
-                            md="4"
-                        />
-                        <TextInput
                             label={t("Latitud")}
                             placeholder={t("Ingresa la latitud")}
                             name="latitud"
                             value={formData.latitud}
                             onChange={handleInputChange}
                             disabled={isLoading}
-                            md="4"
+                            md="6"
                         />
                         <TextInput
                             label={t("Longitud")}
@@ -127,7 +125,7 @@ export const LocalizacionFormModal = ({show: showModal, onClose: handleClose, in
                             value={formData.longitud}
                             onChange={handleInputChange}
                             disabled={isLoading}
-                            md="4"
+                            md="6"
                         />
                         <EmailInput
                             label={t("Email Contacto Repuestos")}

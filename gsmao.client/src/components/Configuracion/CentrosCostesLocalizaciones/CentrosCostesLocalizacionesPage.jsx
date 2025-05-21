@@ -131,13 +131,6 @@ export const LocalizacionesTable = ({items, isLoading, ActionsComponent, ...rest
             minWidth: 100,
         },
         {
-            field: "localizacionSAP",
-            headerName: t("SAP Localización"),
-            valueFormatter: (e) => e.data?.localizacionSAP || "-",
-            flex: 1.5,
-            minWidth: 175,
-        },
-        {
             field: "latitud",
             headerName: t("Latitud"),
             valueFormatter: (e) => e.data?.latitud || "-",
