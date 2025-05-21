@@ -129,14 +129,6 @@ export const PlantasPage = () => {
                             editable: false,
                         },
                         {
-                            field: "stmpconfig",
-                            headerName: t("Configuración STMP"),
-                            flex: 4,
-                            minWidth: 110,
-                            valueGetter: (e) => e.data?.stmpconfig || "-",
-                            editable: false,
-                        },
-                        {
                             field: "empresa",
                             headerName: t("Empresa"),
                             flex: 4,

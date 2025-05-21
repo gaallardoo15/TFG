@@ -92,7 +92,7 @@ export const PlantaFormModal = ({show: showModal, onClose: handleClose, initialD
                             value={formData.latitud}
                             onChange={handleInputChange}
                             disabled={isLoading}
-                            md="6"
+                            md="4"
                         />
                         <TextInput
                             label={t("Longitud")}
@@ -101,16 +101,7 @@ export const PlantaFormModal = ({show: showModal, onClose: handleClose, initialD
                             value={formData.longitud}
                             onChange={handleInputChange}
                             disabled={isLoading}
-                            md="6"
-                        />
-                        <TextInput
-                            label={t("Stmp Config")}
-                            placeholder={t("Ingresa la configuración stmp")}
-                            name="stmpConfig"
-                            value={formData.stmpConfig}
-                            onChange={handleInputChange}
-                            disabled={isLoading}
-                            md="6"
+                            md="4"
                         />
                         <SmartSelectInput
                             label={t("Empresa")}
@@ -122,7 +113,7 @@ export const PlantaFormModal = ({show: showModal, onClose: handleClose, initialD
                             labelKey="descripcion"
                             onChange={handleInputChange}
                             disabled={isLoading}
-                            md="6"
+                            md="4"
                         />
 
                         <MostrarErrores errors={errors} />
