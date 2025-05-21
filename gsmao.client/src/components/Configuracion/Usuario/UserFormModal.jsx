@@ -27,7 +27,7 @@ export function UserFormModal({show: showModal, onClose: handleClose, initialDat
         repeatPassword: "",
         email: "",
         idRol: "",
-        idEmpresa: null,
+        idEmpresa: 1,
         idPlanta: null,
         idEstadoUsuario: null,
     };
@@ -49,7 +49,7 @@ export function UserFormModal({show: showModal, onClose: handleClose, initialDat
                 : {};
         setFormData({...defaultData, ...init2});
         fetchRoles();
-        isEdit && fetchPlantasEmpresa(init2.idEmpresa);
+        fetchPlantasEmpresa(defaultData.idEmpresa);
         setErrors({});
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [showModal, init]);
@@ -107,7 +107,23 @@ export function UserFormModal({show: showModal, onClose: handleClose, initialDat
         setErrors({});
         setIsLoading(true);
 
-        userService.save(formData).then((response) => {
+        let formDataToSend= formData;
+
+        if(roles.filter((r) => r.id == formData.idRol)[0]?.name === "SUPER_ADMINISTRADOR"){
+            formDataToSend= {
+                ...formDataToSend,
+                idEmpresa:null,
+                idPlanta:null
+            }
+        }
+        else if(roles.filter((r) => r.id == formData.idRol)[0]?.name === "ADMINISTRADOR"){
+            formDataToSend= {
+                ...formDataToSend,
+                idPlanta:null
+            }
+        }
+
+        userService.save(formDataToSend).then((response) => {
             if (!response.is_error) {
                 handleClose({shouldRefetch: true});
             } else {
@@ -165,19 +181,8 @@ export function UserFormModal({show: showModal, onClose: handleClose, initialDat
                             value={formData.email}
                             onChange={handleInputChange}
                             disabled={isLoading}
-                            md="6"
+                            md="12"
                         />
-                        <SelectInput
-                            label={t("Rol")}
-                            required
-                            name="idRol"
-                            value={formData.idRol}
-                            onChange={handleInputChange}
-                            options={roles.map((r) => ({value: r.id, label: t(r.name)}))}
-                            disabled={isLoading}
-                            md="6"
-                        />
-
                         {showPassword && (
                             <>
                                 <TextInput
@@ -213,16 +218,14 @@ export function UserFormModal({show: showModal, onClose: handleClose, initialDat
                                 />
                             </>
                         )}
-                        <SmartSelectInput
-                            label={t("Empresa")}
-                            required={!isSuperAdmin}
-                            name="idEmpresa"
-                            value={formData.idEmpresa}
-                            fetcher={empresasService.fetchAll}
-                            valueKey="id"
-                            labelKey="descripcion"
+                        <SelectInput
+                            label={t("Rol")}
+                            required
+                            name="idRol"
+                            value={formData.idRol}
                             onChange={handleInputChange}
-                            disabled={isLoading || isSuperAdmin}
+                            options={roles.map((r) => ({value: r.id, label: t(r.name)}))}
+                            disabled={isLoading}
                             md="6"
                         />
                         <SelectInput

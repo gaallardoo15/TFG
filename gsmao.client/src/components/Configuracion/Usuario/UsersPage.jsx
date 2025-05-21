@@ -240,15 +240,6 @@ export const UsersPage = () => {
                             editable: true,
                         },
                         {
-                            field: "empresa",
-                            headerName: t("Empresa"),
-                            valueGetter: (e) => e.data?.empresa?.descripcion || "-",
-                            flex: 1,
-                            minWidth: 120,
-                            editable: false,
-                            filter: DatatableSelectFilter,
-                        },
-                        {
                             field: "planta",
                             headerName: t("Planta"),
                             valueGetter: (e) => e.data?.planta?.descripcion || "-",
