@@ -235,6 +235,9 @@ export const IndicadoresConfiabilidadPage = () => {
         }
 
         if (name == "idActivo") {
+            if (value == "") {
+                newValue.idActivo = 0;
+            }
             setCompleteFilters((prev) => ({
                 ...prev,
                 activo:
@@ -412,35 +415,7 @@ export const IndicadoresConfiabilidadPage = () => {
                                         name="mes"
                                     />
                                 </DropdownSubMenu>
-                                <DropdownSubMenu
-                                    title={t("Centro de Coste")}
-                                    autoclose="outside"
-                                    style={{width: "30vh"}}>
-                                    <div
-                                        className="ms-3 me-3"
-                                        onClick={(e) => e.stopPropagation()}
-                                        onKeyDown={(e) => {
-                                            if (e.key === "Enter" || e.key === " ") {
-                                                e.stopPropagation();
-                                            }
-                                        }}
-                                        role="button"
-                                        tabIndex={0}>
-                                        <SelectInput
-                                            key={filters.idCentroCoste}
-                                            label={t("Centros de Coste")}
-                                            name="idCentroCoste"
-                                            value={filters.idCentroCoste}
-                                            onChange={handleInputChange}
-                                            options={filteredOpcionesFiltros.centrosCoste.map((c) => ({
-                                                value: c.id,
-                                                label: c.centroCosteSAP + " - " + t(c.descripcionES),
-                                            }))}
-                                            disabled={isLoading}
-                                            md="12"
-                                        />
-                                    </div>
-                                </DropdownSubMenu>
+                                
                                 <DropdownSubMenu title={t("Criticidad")} autoclose="outside">
                                     <DropdownMenuCheckboxes
                                         type="radio"

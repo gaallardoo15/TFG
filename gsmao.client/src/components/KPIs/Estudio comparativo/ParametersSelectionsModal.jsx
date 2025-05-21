@@ -163,8 +163,18 @@ export const ParametersSelectionsModal = ({
                 criticidades: criticidades,
             }));
         }
+        if (name === "idActivo") {
+            if (value == "") {
+                newValue.idActivo = 0;
+            }
+
+            
+        }
 
         if (name === "idCriticidad") {
+            if (value == "") {
+                newValue.idCriticidad = 0;
+            }
             let activosCentroCoste =
                 filters.idCentroCoste > 0
                     ? opcionesFiltros.activos.filter((a) => a.centroCoste.id == filters.idCentroCoste)
@@ -257,20 +267,9 @@ export const ParametersSelectionsModal = ({
                                 label: t(te.name),
                             }))}
                             disabled={isLoading}
-                            md="6"
+                            md="4"
                         />
-                        <SelectInput
-                            label={t("Centro de Coste")}
-                            name="idCentroCoste"
-                            value={filters.idCentroCoste}
-                            onChange={handleInputChange}
-                            options={filteredOpcionesFiltros.centrosCoste.map((c) => ({
-                                value: c.id,
-                                label: c.centroCosteSAP + " - " + t(c.descripcionES),
-                            }))}
-                            disabled={isLoading}
-                            md="6"
-                        />
+                        
                         <SelectInput
                             label={t("Criticidad")}
                             name="idCriticidad"
@@ -281,7 +280,7 @@ export const ParametersSelectionsModal = ({
                                 label: c.descripcion + " (" + t(c.siglas) + ")",
                             }))}
                             disabled={isLoading}
-                            md="6"
+                            md="4"
                         />
                         <SelectInput
                             label={t("Activo")}
@@ -293,7 +292,7 @@ export const ParametersSelectionsModal = ({
                                 label: a.id + " - " + t(a.descripcionES),
                             }))}
                             disabled={isLoading}
-                            md="6"
+                            md="4"
                         />
                         <DateInput
                             label={t("Desde")}
