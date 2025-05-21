@@ -308,28 +308,16 @@ export const InformeOrdenesPage = () => {
                     />
                 </div>
                 <div id="contenedorBtnDescargarInformeOrdenes" className="d-flex gap-3 h-50">
-                    <Dropdown as={ButtonGroup} className="w-100">
-                        <Dropdown.Toggle variant="success" disabled={isLoading} className="w-100">
-                            <Icono name={"fa-solid fa-download"} />
-                            &nbsp;
-                            {t("Descargar Informe")}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu className="super-colors">
-                            <Dropdown.Item
-                                eventKey="1"
-                                onClick={() => descargarInforme(false)}
-                                style={{color: "var(--success)"}}>
-                                {t("Nueva versión")}
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                                eventKey="2"
-                                onClick={() => descargarInforme(true)}
-                                style={{color: "var(--delete)"}}
-                                title={"Próximamente dejará de estar disponible"}>
-                                {t("Versión antigua")}
-                            </Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
+                    <CustomButtonIconText
+                        id="btnDescargarInformeOrdenes"
+                        titulo={t("Descargar Informe")}
+                        texto={t("Descargar Informe")}
+                        icono="fa-solid fa-download"
+                        variant="success"
+                        onClick={() => descargarInforme(false)}
+                        disabled={isLoadingInforme || ordenes.length == 0}
+                        isLoading={isLoadingInforme}
+                    />
                 </div>
             </div>
             <div>
@@ -357,14 +345,6 @@ export const InformeOrdenesPage = () => {
                             headerName: t("ID Activo"),
                             flex: 1,
                             minWidth: 80,
-                            editable: false,
-                        },
-                        {
-                            field: "activoSAP",
-                            headerName: t("Activo SAP"),
-                            flex: 1.5,
-                            minWidth: 100,
-                            valueFormatter: (e) => e.data?.activoSAP || "-",
                             editable: false,
                         },
                         {
@@ -418,14 +398,6 @@ export const InformeOrdenesPage = () => {
                                     </Badge>
                                 );
                             },
-                        },
-                        {
-                            field: "idSAP",
-                            headerName: t("ID SAP Orden"),
-                            flex: 2,
-                            minWidth: 110,
-                            valueFormatter: (e) => e.data?.idSAP || "-",
-                            editable: false,
                         },
                         {
                             field: "tipoOrden",
@@ -527,7 +499,7 @@ export const InformeOrdenesPage = () => {
                             field: "id",
                             headerName: t("ID Orden"),
                             flex: 1,
-                            minWidth: 80,
+                            minWidth: 100,
                             editable: false,
                             cellRenderer: (e) => {
                                 return (
@@ -546,7 +518,7 @@ export const InformeOrdenesPage = () => {
                         },
                         {
                             field: "kksComponente",
-                            headerName: t("KKS"),
+                            headerName: t("Denominación"),
                             flex: 6,
                             minWidth: 250,
                             valueGetter: (e) => e.data?.kksComponente + " - " + e.data?.componente || "-",
@@ -554,7 +526,7 @@ export const InformeOrdenesPage = () => {
                         },
                         {
                             field: "mecanismoDeFallo",
-                            headerName: t("Mecanismo de Fallo"),
+                            headerName: t("Tipo de Incidencia"),
                             flex: 4,
                             minWidth: 150,
                             valueGetter: (e) => e.data?.mecanismoDeFallo || "-",
@@ -595,14 +567,6 @@ export const InformeOrdenesPage = () => {
                             minWidth: 150,
                             valueGetter: (e) => e.data?.fechaResolucion || "",
                             valueFormatter: (e) => FormatearFechaTablas(e.data?.fechaResolucion) || "-",
-                            editable: false,
-                        },
-                        {
-                            field: "tiempoParadaIncidencia",
-                            headerName: t("Tiempo Parada"),
-                            flex: 3,
-                            minWidth: 120,
-                            valueFormatter: (e) => e.data?.tiempoParadaIncidencia || "-",
                             editable: false,
                         },
                     ]}
