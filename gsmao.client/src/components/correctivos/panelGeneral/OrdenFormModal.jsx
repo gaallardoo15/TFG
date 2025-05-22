@@ -100,7 +100,7 @@ export const OrdenFormModal = ({
                 value={formData.id || ""}
                 onChange={onChange}
                 disabled
-                md="2"
+                className="col-12 col-lg-2"
             />
             <SmartSelectInput
                 label={t("Activo")}
@@ -112,7 +112,7 @@ export const OrdenFormModal = ({
                 labelComponent={(a) => `${a.id} - ${a.descripcionES}`}
                 onChange={onChange}
                 disabled
-                md="5"
+                className="col-12 col-lg-5"
             />
             <SelectInputWithConfirmation
                 key={formData.idComponentePadre}
@@ -125,7 +125,7 @@ export const OrdenFormModal = ({
                     label: e.name,
                 }))}
                 disabled={isLoadingOrdenTab || isLoading || !operarioIsInOrden}
-                md="2"
+                className="col-12 col-lg-2"
             />
             <SmartSelectInput
                 label={t("Tipo Orden")}
@@ -137,28 +137,29 @@ export const OrdenFormModal = ({
                 labelKey="name"
                 onChange={onChange}
                 disabled={!isVisible || isLoading}
-                md="3"
+                className="col-12 col-lg-3"
             />
             <TextAreaInput
                 label={t("Comentario")}
                 name="comentarioOrden"
                 value={formData.comentarioOrden}
                 onChange={onChange}
-                md="12"
+                rows={4}
                 required
                 disabled={formData.idEstadoOrden == 2 || isLoading}
-                rows={4}
+                className="col-12"
             />
             <TextAreaInput
                 label={t("Comentario Resolución")}
                 name="comentarioResolucion"
                 value={formData.comentarioResolucion}
                 onChange={onChange}
-                md="12"
                 rows={4}
                 required={estadosCerrados.includes(formData.idEstadoOrden)}
                 disabled={!hayIncidenciasResueltas || formData.idEstadoOrden == 2 || isLoading}
+                className="col-12"
             />
         </Row>
     );
+
 };

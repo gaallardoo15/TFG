@@ -1088,7 +1088,7 @@ input[class^=ag-] {
 /* =============================================== MEDIA QUERIES ====================================== */
 
 /* TABLET VERTICAL */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 850px) {
   .tituloTopPagina{
     font-size: 25px;
   }

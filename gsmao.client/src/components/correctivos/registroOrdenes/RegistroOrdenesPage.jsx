@@ -305,7 +305,7 @@ export const RegistroOrdenesPage = () => {
                             value={formData.id}
                             onChange={handleInputChange}
                             disabled
-                            md="2"
+                            className="col-12 col-lg-2"
                         />
                         <SelectInputWithConfirmation
                             key={formData.idEstadoOrden}
@@ -317,9 +317,9 @@ export const RegistroOrdenesPage = () => {
                                 value: e.id,
                                 label: e.name,
                             }))}
-                            required={true}
+                            required
                             disabled={isLoading}
-                            md="2"
+                            className="col-12 col-lg-2"
                         />
                         <SmartSelectInput
                             label={t("Tipo")}
@@ -330,16 +330,15 @@ export const RegistroOrdenesPage = () => {
                             valueKey="id"
                             labelKey="name"
                             onChange={handleInputChange}
-                            md="2"
+                            className="col-12 col-lg-2"
                         />
-                        
                         <DateInput
                             label={t("Fecha Apertura")}
                             required
                             name="fechaApertura"
                             value={formData.fechaApertura}
                             onChange={handleInputChange}
-                            md="3"
+                            className="col-12 col-lg-3"
                         />
                         <TimeInput
                             label={t("Hora Apertura")}
@@ -347,17 +346,17 @@ export const RegistroOrdenesPage = () => {
                             name="horaApertura"
                             value={formData.horaApertura}
                             onChange={handleInputChange}
-                            md="3"
+                            className="col-12 col-lg-3"
                         />
                         <TextInput
                             label={t("Localización")}
                             name="localizacion"
                             value={formData.localizacion}
                             onChange={handleInputChange}
-                            disabled={true}
-                            md="3"
+                            disabled
+                            className="col-12 col-lg-3"
                         />
-                        <div className="col-md-3 mb-3">
+                        <div className="col-12 col-lg-3 mb-3">
                             <ButtonLabel
                                 titulo={t("Usuarios orden")}
                                 texto={t("Usuarios - Orden")}
@@ -379,11 +378,11 @@ export const RegistroOrdenesPage = () => {
                                 value: a.id,
                                 label: a.id + " - " + t(a.descripcionES),
                             }))}
-                            disabled={isLoading || incidencias.length != 0}
+                            disabled={isLoading || incidencias.length !== 0}
                             required
-                            md="4"
+                            className="col-12 col-lg-4"
                         />
-                        <Col md="2" className="d-flex justify-content-center align-items-end mb-3">
+                        <Col className="col-12 col-lg-2 d-flex justify-content-center align-items-end mb-3">
                             <CustomButtonIconText
                                 titulo={t("Añadir Incidencia")}
                                 texto={t("Incidencia")}
@@ -393,18 +392,17 @@ export const RegistroOrdenesPage = () => {
                                 disabled={!formData.idActivo}
                             />
                         </Col>
-                        
                         <TextAreaInput
                             label={t("Comentario")}
                             name="comentarioOrden"
                             value={formData.comentarioOrden}
                             onChange={handleInputChange}
-                            md="12"
+                            className="col-12"
                             rows={1}
                         />
                     </Row>
                 </div>
-                <Col sm="12" hidden={!incidencias.length > 0}>
+                <Col className="col-12" hidden={!incidencias.length > 0}>
                     <div className="customCard">
                         <TablaIncidenciasOrden
                             formdata={formData}
@@ -416,40 +414,44 @@ export const RegistroOrdenesPage = () => {
                         />
                     </div>
                 </Col>
-                <div id="seccionBajaRegistroOrdenes" className=" d-flex gap-4">
-                    <div className="w-50 customCard">
-                        <Row>
-                            <DateInput
-                                label={t("Fecha Cierre")}
-                                name="fechaCierre"
-                                value={formData.fechaCierre}
-                                onChange={handleInputChange}
-                                md="6"
-                                disabled={!estadosCerrados.includes(formData.idEstadoOrden)}
-                                required={estadosCerrados.includes(formData.idEstadoOrden)}
-                            />
-                            <TimeInput
-                                label={t("Hora Cierre")}
-                                name="horaCierre"
-                                value={formData.horaCierre}
-                                onChange={handleInputChange}
-                                md="6"
-                                disabled={!estadosCerrados.includes(formData.idEstadoOrden)}
-                                required={estadosCerrados.includes(formData.idEstadoOrden)}
-                            />
-                            <TextAreaInput
-                                label={t("Comentario Resolución")}
-                                name="comentarioResolucion"
-                                value={formData.comentarioResolucion}
-                                onChange={handleInputChange}
-                                md="12"
-                                rows={5}
-                                disabled={!hayIncidenciasResuelta}
-                            />
-                        </Row>
+
+                <div id="seccionBajaRegistroOrdenes" className="row g-4">
+                    <div className="col-12 col-lg-6">
+                        <div className="customCard">
+                            <Row>
+                                <DateInput
+                                    label={t("Fecha Cierre")}
+                                    name="fechaCierre"
+                                    value={formData.fechaCierre}
+                                    onChange={handleInputChange}
+                                    className="col-12 col-lg-6"
+                                    disabled={!estadosCerrados.includes(formData.idEstadoOrden)}
+                                    required={estadosCerrados.includes(formData.idEstadoOrden)}
+                                />
+                                <TimeInput
+                                    label={t("Hora Cierre")}
+                                    name="horaCierre"
+                                    value={formData.horaCierre}
+                                    onChange={handleInputChange}
+                                    className="col-12 col-lg-6"
+                                    disabled={!estadosCerrados.includes(formData.idEstadoOrden)}
+                                    required={estadosCerrados.includes(formData.idEstadoOrden)}
+                                />
+                                <TextAreaInput
+                                    label={t("Comentario Resolución")}
+                                    name="comentarioResolucion"
+                                    value={formData.comentarioResolucion}
+                                    onChange={handleInputChange}
+                                    className="col-12"
+                                    rows={5}
+                                    disabled={!hayIncidenciasResuelta}
+                                />
+                            </Row>
+                        </div>
                     </div>
-                    <div className="w-50 customCard">
-                        <div className="d-flex flex-column gap-3">
+
+                    <div className="col-12 col-lg-6">
+                        <div className="customCard d-flex flex-column gap-3 h-100">
                             <div className="text-end">
                                 <CustomPopover
                                     body={t(
@@ -468,8 +470,8 @@ export const RegistroOrdenesPage = () => {
                                         texto={t("Adjuntos")}
                                         variant="warning"
                                         onClick={() => handleAction("adjuntos")}
-                                        badge={documentacionOrden.filter((item) => item.type == "file")?.length > 0}
-                                        badgeValue={documentacionOrden.filter((item) => item.type == "file")?.length}
+                                        badge={documentacionOrden.filter((item) => item.type === "file")?.length > 0}
+                                        badgeValue={documentacionOrden.filter((item) => item.type === "file")?.length}
                                     />
                                 </div>
                                 <div className="divIconoBoton">
@@ -484,9 +486,9 @@ export const RegistroOrdenesPage = () => {
                                         badge={materialIsRequired}
                                         badgeValue={
                                             formData.materiales.length > 0 ? (
-                                                <Icono name={"fa-solid fa-check"} style={{fontSize: "12px"}} />
+                                                <Icono name={"fa-solid fa-check"} style={{ fontSize: "12px" }} />
                                             ) : (
-                                                <Icono name={"fa-solid fa-xmark"} style={{fontSize: "12px"}} />
+                                                <Icono name={"fa-solid fa-xmark"} style={{ fontSize: "12px" }} />
                                             )
                                         }
                                         badgeColor={formData.materiales.length > 0 ? "success" : "danger"}
@@ -496,7 +498,8 @@ export const RegistroOrdenesPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="divContainerConfirmarOrden">
+
+                <div className="divContainerConfirmarOrden mt-4">
                     <CustomButtonIconText
                         type="submit"
                         titulo={t("Confirmar Orden")}
@@ -504,9 +507,10 @@ export const RegistroOrdenesPage = () => {
                         icono={"fa-solid fa-check"}
                         disabled={isLoading}
                         isLoading={isLoading}
-                        style={{backgroundColor: "var(--identificativoCliente) !important"}}
+                        style={{ backgroundColor: "var(--identificativoCliente) !important" }}
                     />
                 </div>
+
                 {modalState.show &&
                     (() => {
                         switch (modalState.type) {

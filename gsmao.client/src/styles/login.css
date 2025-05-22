@@ -102,6 +102,7 @@
     font-size: 16px;
     padding-left: 15px;
     border:none ;
+    border-radius: 0px;
     border-bottom: 1px solid rgb(63, 63, 63);
     background-color: transparent;
     outline: none;
@@ -208,7 +209,51 @@ input:-moz-autofill {
 }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1100px) {
+  .left-form {
+      display: none !important;
+  }
+
+  .right-form {
+      width: 100%;
+      border-left:none;
+  }
+
+  .formularioLogin{
+    width: 50%;
+  }
+  .right-form form {
+      width: 100%;
+      padding: 0 2em;
+      height: 50vh;
+  }
+
+  .right-form form h2 {
+      font-size: 35px !important;
+      margin-bottom: 30px;
+  }
+
+  .right-form form label {
+    font-size: 20px !important;
+    margin-bottom: 30px;
+}
+
+  .right-form .btnLogin {
+    margin-top: 50px !important;
+  }
+
+  .footerLogin p{
+    font-size: 16px !important;
+    padding-bottom: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+
+  .form .d-flex{
+    flex-direction: column !important;
+  }
+
   .left-form {
       display: none !important;
   }
