@@ -55,10 +55,10 @@ namespace GSMAO.Server.Database
                 var rolSuperAdmin = await _context.Roles.Where(r => r.Name == "SUPER_ADMINISTRADOR").FirstOrDefaultAsync();
                 var usuario = new Usuario
                 {
-                    Nombre = "Sistemas IT",
-                    Apellidos = "Suitelec",
-                    Email = "superadmin@suitelec.com",
-                    UserName = "superadmin@suitelec.com",
+                    Nombre = "Usuario",
+                    Apellidos = "GMAO",
+                    Email = "usuario@gmao.com",
+                    UserName = "usuario@gmao.com",
                     Confirmado = 1,
                     IdRol = rolSuperAdmin!.Id,
                     IdEstadoUsuario = activo!.Id,
@@ -113,7 +113,7 @@ namespace GSMAO.Server.Database
             {
                 var hitachi = new List<Empresa>
                 {
-                    new Empresa { Descripcion = "Hitachi Energy" }
+                    new Empresa { Descripcion = "GMAO" }
                 };
                 await _context.Empresas.AddRangeAsync(hitachi);
                 await _context.SaveChangesAsync();
@@ -125,7 +125,7 @@ namespace GSMAO.Server.Database
             // Inicializar valores predeterminados para Plantas si no existen.
             if (!_context.Plantas.Any())
             {
-                var empresa = await _context.Empresas.Where(r => r.Descripcion == "Hitachi Energy").FirstOrDefaultAsync();
+                var empresa = await _context.Empresas.Where(r => r.Descripcion == "GMAO").FirstOrDefaultAsync();
 
                 var hitachi = new List<Planta>
                 {

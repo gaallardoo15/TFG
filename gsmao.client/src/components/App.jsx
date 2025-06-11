@@ -284,25 +284,12 @@ export default function App() {
 
                 {/* PÁGINAS CONFIGURACIÓN */}
                 <Route
-                    path={RoutePaths.Empresas.path}
-                    element={<DefaultLayout component={EmpresasPage} datos={RoutePaths.Empresas} />}
-                />
-                <Route
                     path={RoutePaths.Plantas.path}
                     element={<DefaultLayout component={PlantasPage} datos={RoutePaths.Plantas} />}
                 />
                 <Route
                     path={RoutePaths.Usuarios.path}
                     element={<DefaultLayout component={UsersPage} datos={RoutePaths.Usuarios} />}
-                />
-                <Route
-                    path={RoutePaths.LocalizacionesCentrosCostes.path}
-                    element={
-                        <DefaultLayout
-                            component={CentrosCostesLocalizacionesPage}
-                            datos={RoutePaths.LocalizacionesCentrosCostes}
-                        />
-                    }
                 />
                 <Route
                     path={RoutePaths.MecanismosFalloIncidenciasResoluciones.path}

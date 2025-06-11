@@ -98,6 +98,7 @@ export const Header = () => {
             return (
                 <Dropdown key={index} className="dropdownPersonalizado">
                     <Dropdown.Toggle variant="link" className={toggleClass}>
+                        <Icono name={route.icon} className="me-2" />
                         {route.navName}
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
@@ -105,6 +106,7 @@ export const Header = () => {
                             if (!canSee(userRol, subRoute.navName) || subRoute.navName=="Empresas") return null;
                             return (
                                 <Dropdown.Item key={subIndex} as={NavLink} to={subRoute.path}>
+                                    <Icono name={subRoute.icon} className="me-2" />
                                     {subRoute.navName}
                                 </Dropdown.Item>
                             );
@@ -117,6 +119,7 @@ export const Header = () => {
                 <NavLink key={index} to={route.path} className={({ isActive }) =>
                     `nav-link text-white mx-2 ${isActive ? "active" : ""}`
                 }>
+                    <Icono name={route.icon} className="me-2" />
                     {route.navName}
                 </NavLink>
             );

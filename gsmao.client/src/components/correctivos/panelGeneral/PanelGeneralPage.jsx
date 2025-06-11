@@ -76,7 +76,7 @@ const FormatearFecha = (fecha) => {
 
 export const PanelGeneralPage = () => {
     const defaultFilters = {
-        years: [new Date().getFullYear(), new Date().getFullYear() - 1],
+        years: [new Date().getFullYear()],
         tiposOrdenes: [],
         criticidades: [],
         fechaDesde: "",
